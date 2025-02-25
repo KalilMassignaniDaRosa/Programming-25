@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming\\classes\\01_begin\\01_begin\\models\\variables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\models\\variables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming\\classes\\01_begin\\01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming\\classes\\01_begin\\01_begin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "01_Begin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "01_Begin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T00:24:49.233Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "01_Begin\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "01_Begin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T00:20:12.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Variables.cs",
+              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Models\\Variables.cs",
+              "RelativeDocumentMoniker": "01_Begin\\Models\\Variables.cs",
+              "ToolTip": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Models\\Variables.cs",
+              "RelativeToolTip": "01_Begin\\Models\\Variables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T23:21:49.297Z",
+              "EditorCaption": ""
             }
           ]
         }

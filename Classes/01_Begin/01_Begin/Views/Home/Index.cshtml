@@ -1,8 +1,66 @@
-﻿@{
+﻿@model Variables
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    <p>
+        The Value of <b>UserCount</b> is: <i>@Model.userCount</i>
+    </p>
+    <p>
+        The Value of <b>TotalCount</b> is: <i>@Model.totalCount</i>
+    </p>
+    
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Min</th>
+            <th>Max</th>
+        </tr>
+        <tr>
+            <td>Byte</td>
+            <td>@Model.myByte.minValue</td>
+            <td>@Model.myByte.maxValue</td>
+        </tr>
+        <tr>
+            <td>Sbyte</td>
+            <td>@Model.mySbyte.minValue</td>
+            <td>@Model.mySbyte.maxValue</td>
+        </tr>
+        <tr>
+            <td>Short</td>
+            <td>@Model.myShort.minValue</td>
+            <td>@Model.myShort.maxValue</td>
+        </tr>
+        <tr>
+            <td>Ushort</td>
+            <td>@Model.myUshort.minValue</td>
+            <td>@Model.myUshort.maxValue</td>
+        </tr>
+        <tr>
+            <td>Int</td>
+            <td>@Model.myInt.minValue</td>
+            <td>@Model.myInt.maxValue</td>
+        </tr>
+        <tr>
+            <td>Uint</td>
+            <td>@Model.myUint.minValue</td>
+            <td>@Model.myUint.maxValue</td>
+        </tr>
+        <tr>
+            <td>Long</td>
+            <td>@Model.myLong.minValue</td>
+            <td>@Model.myLong.maxValue</td>
+        </tr>
+        <tr>
+            <td>Ulong</td>
+            <td>@Model.myUlong.minValue</td>
+            <td>@Model.myUlong.maxValue</td>
+        </tr>
+    </table>
+
+
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
