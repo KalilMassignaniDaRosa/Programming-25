@@ -17,6 +17,7 @@
         public const int interestRate = 10;
 
         // MVVM
+        // Integer
         public Byte myByte = new Byte();
         public Int myInt = new Int();
         public Long myLong = new Long();
@@ -26,7 +27,13 @@
         public Ulong myUlong = new Ulong();
         public Ushort myUshort = new Ushort();
 
+        // Float
+        public Float myFloat = new Float();
+        public Double myDouble = new Double();
 
+        // Char
+        public Char myChar = new Char();
+        public String myString = new String();
 
         // O metodo construtor e invocado na instanciacao do objeto por meio da palavra reservada new
         // Por regra, o construtor sempre tem o mesmo nome da classe

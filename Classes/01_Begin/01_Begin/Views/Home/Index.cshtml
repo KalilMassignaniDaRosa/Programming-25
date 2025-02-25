@@ -5,14 +5,17 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Count Info</h1>
     <p>
         The Value of <b>UserCount</b> is: <i>@Model.userCount</i>
     </p>
     <p>
         The Value of <b>TotalCount</b> is: <i>@Model.totalCount</i>
     </p>
-    
+    <br>
+
+
+    <h1 class="display-4">Integer Types</h1>
     <table>
         <tr>
             <th>Type</th>
@@ -60,7 +63,46 @@
             <td>@Model.myUlong.maxValue</td>
         </tr>
     </table>
+    <br>
 
+    <h1 class="display-4">Floating-point Variables</h1>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Min</th>
+            <th>Max</th>
+        </tr>
+        <tr>
+            <td>Float</td>
+            <td>@Model.myFloat.minValue</td>
+            <td>@Model.myFloat.maxValue</td>
+        </tr>
+        <tr>
+            <td>Double</td>
+            <td>@Model.myDouble.minValue</td>
+            <td>@Model.myDouble.maxValue</td>
+        </tr>
+    </table>
+    <br />
 
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Char Variables</h1>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Min</th>
+            <th>Max</th>
+        </tr>
+        <tr>
+            <td>Char</td>
+            <td>@Model.myChar.minValue</td>
+            <td>@Model.myChar.maxValue</td>
+        </tr>
+        <tr>
+            <td>String</td>
+            <td>@Model.myString.minValue</td>
+            <td>@Model.myString.maxValue</td>
+        </tr>
+    </table>
+
+    
 </div>

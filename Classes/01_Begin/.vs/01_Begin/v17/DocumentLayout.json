@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\",
+  "WorkspaceRootPath": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming\\classes\\01_begin\\01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming\\classes\\01_begin\\01_begin\\models\\variables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\models\\variables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\models\\char.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\models\\char.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming\\classes\\01_begin\\01_begin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\models\\float.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\models\\float.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\models\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\models\\string.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\models\\variables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\models\\variables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,13 +36,27 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "01_Begin\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "01_Begin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABoAAAAAAAAAAADwvzkAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAYwFIAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-25T00:24:49.233Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Float.cs",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\Float.cs",
+              "RelativeDocumentMoniker": "01_Begin\\Models\\Float.cs",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\Float.cs",
+              "RelativeToolTip": "01_Begin\\Models\\Float.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T12:54:42.897Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -44,26 +66,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "01_Begin\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "01_Begin\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "String.cs",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\String.cs",
+              "RelativeDocumentMoniker": "01_Begin\\Models\\String.cs",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\String.cs",
+              "RelativeToolTip": "01_Begin\\Models\\String.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T00:20:12.394Z",
+              "WhenOpened": "2025-02-25T13:08:59.036Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Char.cs",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\Char.cs",
+              "RelativeDocumentMoniker": "01_Begin\\Models\\Char.cs",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\Char.cs",
+              "RelativeToolTip": "01_Begin\\Models\\Char.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T13:07:58.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Variables.cs",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Models\\Variables.cs",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\Variables.cs",
               "RelativeDocumentMoniker": "01_Begin\\Models\\Variables.cs",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming\\Classes\\01_Begin\\01_Begin\\Models\\Variables.cs",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Models\\Variables.cs",
               "RelativeToolTip": "01_Begin\\Models\\Variables.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwCYAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T23:21:49.297Z",
               "EditorCaption": ""
