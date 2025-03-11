@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kalil\\Documents\\Códigos\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj": {}
+    "C:\\Users\\406157\\Desktop\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kalil\\Documents\\Códigos\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj": {
+    "C:\\Users\\406157\\Desktop\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kalil\\Documents\\Códigos\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj",
+        "projectUniqueName": "C:\\Users\\406157\\Desktop\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj",
         "projectName": "01_Begin",
-        "projectPath": "C:\\Users\\Kalil\\Documents\\Códigos\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj",
-        "packagesPath": "C:\\Users\\Kalil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kalil\\Documents\\Códigos\\Programming-25\\Classes\\01_Begin\\01_Begin\\obj\\",
+        "projectPath": "C:\\Users\\406157\\Desktop\\Programming-25\\Classes\\01_Begin\\01_Begin\\01_Begin.csproj",
+        "packagesPath": "C:\\Users\\406157\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\406157\\Desktop\\Programming-25\\Classes\\01_Begin\\01_Begin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Kalil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\406157\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

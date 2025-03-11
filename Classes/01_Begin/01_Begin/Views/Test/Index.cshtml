@@ -1,0 +1,27 @@
+﻿@*Comentario no Razor*@
+@model _01_Begin.Controllers.Result;
+
+@{
+    ViewData["Title"] = "Test";
+}
+<h1>Controller: Test</h1>
+<h2>Index Method</h2>
+<h3>View Index</h3>
+
+<hr />
+
+<form method="post" asp-action="Index" asp-controller="Test">
+
+    <input type="text" id="myText" name="myText" />
+    <input type="submit" value="Post" />
+</form>
+
+<hr/>
+
+@if( !string.IsNullOrEmpty(Model.Text))
+{
+    <div>
+        <span>Converted text: </span>
+        <strong>@Model.Text</strong>
+    </div>   
+}
