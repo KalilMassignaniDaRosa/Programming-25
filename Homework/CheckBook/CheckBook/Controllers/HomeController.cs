@@ -13,23 +13,40 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string language)
     {
-        return View(new CheckBookModel());
+        language = string.IsNullOrEmpty(language) ? "pt" : language.ToLower();
+
+        if (language == "en")
+        {
+            return View("IndexEn", new CheckBookModelEn());
+        }
+        else
+        {
+            return View("IndexPt", new CheckBookModelPt());
+        }
     }
+
 
     [HttpPost]
-    public IActionResult Index(int number)
+    public IActionResult Index(string language, int number)
     {
-        CheckBookModel checkModel = new();
-        string inFull = checkModel.ConvertNumber(number);
-        return View("Index", checkModel);
+        language = string.IsNullOrEmpty(language) ? "pt" : language.ToLower();
+
+        if (language == "en")
+        {
+            var modelEn = new CheckBookModelEn();
+            modelEn.NumberInWords = modelEn.ConvertNumber(number); 
+            return View("IndexEn", modelEn); 
+        }
+        else
+        {
+            var modelPt = new CheckBookModelPt();
+            modelPt.NumberInWords = modelPt.ConvertNumber(number); 
+            return View("IndexPt", modelPt);
+        }
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
