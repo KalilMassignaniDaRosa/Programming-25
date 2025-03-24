@@ -8,15 +8,30 @@
         public string ConvertNumber(int number)
         {
             if (number == 0)
-                return "Zero reais";
+                return "Zero";
             else if (number == 1000000)
                 return "Um milhão";
 
-            int reais = (int)number;
+            int thousandsPart = number / 1000;
+            int hundredsPart = number % 1000;
+
             string words = string.Empty;
 
-            // Converte reais
-            words += ConvertGroup(reais);
+            if (thousandsPart > 0)
+            {
+                if (thousandsPart == 1)
+                    words +=  "mil";
+                else
+                    words += ConvertGroup(thousandsPart) + " mil";
+            }
+
+            if (hundredsPart > 0)
+            {
+                if (thousandsPart > 0)
+                    words += " e ";
+              
+                words += ConvertGroup(hundredsPart);
+            }
 
             return char.ToUpper(words[0]) + words.Substring(1);
         }
@@ -59,7 +74,7 @@
                 }
             }
 
-            return words;
+            return char.ToUpper(words[0]) + words.Substring(1);
         }
 
         private string GetUnitsWord(int digit)
