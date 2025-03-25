@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="get" asp-action="GetIf">
+                        <div class="form-group mb-3">
+                            <label for="xFromIf" class="form-label">Insert a value for X:</label>
+                            <input type="number" class="form-control" id="xFromIf" name="x"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100" >Submit</button>
+                    </form>
+                </div>
+
+                <div class="card-body">
+                    <form method="get" asp-action="GetSwitch">
+                        <div class="form-group mb-3">
+                            <label for="xFromSwitch" class="form-label">Insert a value for X:</label>
+                            <input type="text" class="form-control" id="xFromSwitch" name="x" />
+                        </div>
+                        <button type="submit" value="GetSwitch" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+
+                <div class="card-body">
+                    <form method="get" asp-action="GetFor">
+                        <div class="form-group mb-3">
+                            <label for="xFromFor" class="form-label">Insert a value for X:</label>
+                            <input type="text" class="form-control" id="xFromFor" name="x" />
+                        </div>
+                        <button type="submit" value="GetFor" class="btn btn-primary w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

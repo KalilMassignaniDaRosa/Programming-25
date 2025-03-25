@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form method="get" asp-action="WeekDay">
+        <label for="weekDay" class="form-label">Insert a number</label>
+        <input type="number" class="form-control" id="weekDay" name="number"/>
+    </form>
+    <button type="submit" value="WeekDay" class="btn btn-primary">Submit</button>
+</div>
