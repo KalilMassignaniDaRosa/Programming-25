@@ -14,8 +14,13 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public IActionResult Index()
+    public IActionResult Index(int number = 0) // Valor padrao
     {
+        WeekDayModel wday = new();
+        string day = (number == 0) ? "" : wday.NumberToDay(number); 
+
+        @ViewBag.DayName = day;
+
         return View();
     }
 
@@ -23,44 +28,6 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
-    }
-
-    [HttpGet]
-    public string WeekDay(int number)
-    {
-        string[] weekDaysArray = ["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        string result;
-        number--;
-        
-        switch (number)
-        {
-            case 0:
-                result = weekDaysArray[number];
-                break;
-            case 1:
-                result = weekDaysArray[number];
-                break;
-            case 2:
-                result = weekDaysArray[number];
-                break;
-            case 3:
-                result = weekDaysArray[number];
-                break;
-            case 4:
-                result = weekDaysArray[number];
-                break;
-            case 5:
-                result = weekDaysArray[number];
-                break;
-            case 6:
-                result = weekDaysArray[number];
-                break;
-            default:
-                result = "Error! Insert a number between 1 and 7";
-                break;
-        }
-
-        return result;
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

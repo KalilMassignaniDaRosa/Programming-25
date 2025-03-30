@@ -1,11 +1,32 @@
-﻿@{
+﻿@model WeekDayModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <form method="get" asp-action="WeekDay">
-        <label for="weekDay" class="form-label">Insert a number</label>
-        <input type="number" class="form-control" id="weekDay" name="number"/>
-    </form>
-    <button type="submit" value="WeekDay" class="btn btn-primary">Submit</button>
+<div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 400px;">
+        <div class="card-header text-center">
+            <h4>Find the Day of the Week</h4>
+        </div>
+        <div class="card-body">
+            <form method="get" asp-action="Index">
+                <div class="mb-3">
+                    <label for="weekDay" class="form-label">Insert a number between 1 and 7</label>
+                    <input type="number" class="form-control" id="weekDay" min="1" max="7" name="number" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(ViewBag.DayName))
+    {
+        <div class="card mt-3 mx-auto" style="max-width: 400px;">
+            <div class="card-body text-center bg-success text-white">
+                <h5 class="card-title">The Day is:</h5>
+                <p class="card-text"><strong>@ViewBag.DayName</strong></p>
+            </div>
+        </div>
+    }
 </div>
