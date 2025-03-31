@@ -12,7 +12,9 @@
                             <label for="xFromIf" class="form-label">Insert a value for X:</label>
                             <input type="number" class="form-control" id="xFromIf" name="x"/>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100" >Submit</button>
+                        <button type="submit" class="btn btn-primary w-100" >
+                            Get If
+                        </button>
                     </form>
                 </div>
 
@@ -22,7 +24,9 @@
                             <label for="xFromSwitch" class="form-label">Insert a value for X:</label>
                             <input type="text" class="form-control" id="xFromSwitch" name="x" />
                         </div>
-                        <button type="submit" value="GetSwitch" class="btn btn-primary w-100">Submit</button>
+                        <button type="submit" value="GetSwitch" class="btn btn-primary w-100">
+                            Get Switch
+                        </button>
                     </form>
                 </div>
 
@@ -32,7 +36,21 @@
                             <label for="xFromFor" class="form-label">Insert a value for X:</label>
                             <input type="text" class="form-control" id="xFromFor" name="x" />
                         </div>
-                        <button type="submit" value="GetFor" class="btn btn-primary w-100">Submit</button>
+                        <button type="submit" value="GetFor" class="btn btn-primary w-100">
+                            Get For
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-body">
+                    <form method="get" asp-action="GetForEach">
+                        <div class="form-group mb-3">
+                            <label for="colorFromGetForEach" class="form-label">Insert a color name:</label>
+                            <input type="text" class="form-control" id="colorFromGetForEach" name="color" />
+                        </div>
+                        <button type="submit" value="GetForEach" class="btn btn-primary w-100">
+                            Get ForEach
+                        </button>
                     </form>
                 </div>
             </div>

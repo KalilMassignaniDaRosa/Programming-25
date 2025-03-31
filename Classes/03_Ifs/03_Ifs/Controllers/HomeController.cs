@@ -13,7 +13,6 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-
     [HttpGet]
     public IActionResult Index()
     {
@@ -118,14 +117,46 @@ public class HomeController : Controller
 
         string returnString = string.Empty;
 
-        for(int i = 0; i <= x; i++)
+        for(int i = 1; i <= x; i++)
         {
+            // E se eu quisesse interromper o laco caso ele fosse maior que 5
+            if (i > 50)
+                break; // O comando break interrompe a laco
+
+            // Caso eu deseje que o laco siga em frente forcando a continuar a execucao
+            if (i % 2 != 0)
+                continue; // Avanca para a proxima repeticao
+
             returnString += $"{i}; ";
         }
 
         return returnString;
     }
 
+    [HttpGet]
+    public string GetForEach(string color)
+    {
+        /*
+         O comando foreach (para cada) e utilizado para iterar por uma sequencia de itens
+         em uma colecao e servir como uma opcao simples de repeticao.
+         */
+        string[] colors = {"Red","Black","Blue","Yellow","Green","White","Navy blue","Pink","Gray"};
+
+        string returnString = string.Empty;
+
+
+        if (colors.Contains(char.ToUpper(color[0]) + color.Substring(1)))
+            returnString = "The chosen color is valid\n";
+        else
+            returnString = "Chosen color ivalid!\n";
+
+        foreach (string s in colors)
+        {
+            returnString += $" [{s}]";
+        }
+
+        return returnString;
+    }
 
     public IActionResult Privacy()
     {
