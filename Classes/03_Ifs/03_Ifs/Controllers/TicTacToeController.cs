@@ -18,19 +18,60 @@ namespace _03_Ifs.Controllers
             )
         {
             string[,] matrixTTT = new string[3, 3];
-            matrixTTT[0, 0] = A00;
-            matrixTTT[0, 1] = A01;
-            matrixTTT[0, 2] = A02;
+            bool xWon = false;
 
-            matrixTTT[1, 0] = A10;
-            matrixTTT[1, 1] = A11;
-            matrixTTT[1, 2] = A12;
+            matrixTTT[0, 0] = A00.ToLower();
+            matrixTTT[0, 1] = A01.ToLower();
+            matrixTTT[0, 2] = A02.ToLower();
 
-            matrixTTT[2, 0] = A20;
-            matrixTTT[2, 1] = A21;
-            matrixTTT[2, 2] = A22;
+            matrixTTT[1, 0] = A10.ToLower();
+            matrixTTT[1, 1] = A11.ToLower();
+            matrixTTT[1, 2] = A12.ToLower();
 
-            return View();
+            matrixTTT[2, 0] = A20.ToLower();
+            matrixTTT[2, 1] = A21.ToLower();
+            matrixTTT[2, 2] = A22.ToLower();
+
+            // Linha ganhou
+            if (matrixTTT[0, 0] == matrixTTT[0, 1] && matrixTTT[0, 2] == matrixTTT[0, 0])
+            {
+                if (matrixTTT[0, 0].Contains('x'))
+                    xWon = true;
+            }
+            // Coluna ganhou
+            else if (matrixTTT[0, 0] == matrixTTT[1, 0] && matrixTTT[2, 0] == matrixTTT[0, 0])
+            {
+                if (matrixTTT[0, 0].Contains('x'))
+                    xWon = true;
+            }
+            // Diagonal ganhou
+            else if (matrixTTT[0, 0] == matrixTTT[1, 1] && matrixTTT[2, 2] == matrixTTT[0, 0])
+            {
+                if (matrixTTT[0, 0].Contains('x'))
+                    xWon = true;
+            }
+            // Diagonal invertida ganhou
+            else  if (matrixTTT[0, 2] == matrixTTT[1, 1] && matrixTTT[2, 0] == matrixTTT[0, 2])
+            {
+                string teste = matrixTTT[0, 0];
+                if (matrixTTT[0, 0].Contains('x'))
+                    xWon = true;
+            }
+            else
+            {
+                ViewBag.Message = "Error";
+                return View();
+            }
+
+            if (xWon)
+            {
+                ViewBag.Message = "X Wins";
+                return View();
+            }else
+            {
+                ViewBag.Message = "O wins";
+                return View();
+            }
         }
     }
 }

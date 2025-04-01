@@ -3,43 +3,68 @@
 *@
 @{
 }
-<form id="TicTacToeForm" method="post">
-    <div>
-        <table>
-            <tr>
-                <td>
-                    <input type="text" name="A00" maxlength="1" pattern="[XO]"/>
-                </td>
-                <td>
-                    <input type="text" name="A01" maxlength="1" pattern="[XO]" />
-                </td>
-                <td>
-                    <input type="text" name="A02" maxlength="1" pattern="[XO]" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="A10" maxlength="1" pattern="[XO]" />
-                </td>
-                <td>
-                    <input type="text" name="A11" maxlength="1" pattern="[XO]" />
-                </td>
-                <td>
-                    <input type="text" name="A12" maxlength="1" pattern="[XO]" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="A20" maxlength="1" pattern="[XO]" />
-                </td>
-                <td>
-                    <input type="text" name="A21" maxlength="1" pattern="[XO]" />
-                </td>
-                <td>
-                    <input type="text" name="A22" maxlength="1" pattern="[XO]" />
-                </td>
-            </tr>
-        </table>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h4>Tic Tac Toe</h4>
+                    </div>
+                    <form id="TicTacToeForm" method="post">
+                        <div class="form-group mb-3">
+                            <table class="table table-borderless align-middle">
+                                <tr>
+                                    <td>
+                                        <input type="text" name="A00" maxlength="1" pattern="[XOxo]" required/>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A01" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A02" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="A10" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A11" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A12" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="A20" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A21" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A22" maxlength="1" pattern="[XOxo]" required />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <button type="submit" value="Play" class="btn btn-primary w-100">
+                            Play
+                        </button>
+                    </form>
+                </div>
+            </div>
+            @if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="card mt-6 mx-auto mt-3">
+                    <div class="card-body text-center bg-success text-white">
+                        <p class="card-text"><strong>@ViewBag.Message</strong></p>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
-    <input type="submit" value="Validate" />
-</form>
+</div>
+
