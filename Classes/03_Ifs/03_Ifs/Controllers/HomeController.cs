@@ -163,6 +163,39 @@ public class HomeController : Controller
         return View();
     }
 
+    // Gets para retornar uma view
+    [HttpGet]
+    public IActionResult ShowIfResult(int x)
+    {
+        ViewBag.Result = GetIf(x);
+        ViewBag.Title = "If Result";
+        return View("Result");
+    }
+
+    [HttpGet]
+    public IActionResult ShowSwitchResult(int x)
+    {
+        ViewBag.Result = GetSwitch(x);
+        ViewBag.Title = "Switch Result";
+        return View("Result");
+    }
+
+    [HttpGet]
+    public IActionResult ShowForResult(int x)
+    {
+        ViewBag.Result = GetFor(x);
+        ViewBag.Title = "For Result";
+        return View("Result");
+    }
+
+    [HttpGet]
+    public IActionResult ShowForEachResult(string color)
+    {
+        ViewBag.Result = GetForEach(color);
+        ViewBag.Title = "Foreach Result";
+        return View("Result");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

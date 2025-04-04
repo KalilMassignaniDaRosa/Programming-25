@@ -18,7 +18,6 @@ namespace _03_Ifs.Controllers
             )
         {
             string[,] matrixTTT = new string[3, 3];
-            bool xWon = false;
 
             matrixTTT[0, 0] = A00.ToLower();
             matrixTTT[0, 1] = A01.ToLower();
@@ -32,46 +31,64 @@ namespace _03_Ifs.Controllers
             matrixTTT[2, 1] = A21.ToLower();
             matrixTTT[2, 2] = A22.ToLower();
 
+            string winner = null!;
+
             // Linha ganhou
-            if (matrixTTT[0, 0] == matrixTTT[0, 1] && matrixTTT[0, 2] == matrixTTT[0, 0])
+            for (int i = 0; i<3; i++)
             {
-                if (matrixTTT[0, 0].Contains('x'))
-                    xWon = true;
+                if (!string.IsNullOrEmpty(matrixTTT[i,0]) &&
+                    matrixTTT[i, 0] == matrixTTT[i, 1] &&
+                     matrixTTT[i, 1] == matrixTTT[i, 2])
+                {
+                    winner = matrixTTT[i, 0];
+                    break;
+                }
             }
             // Coluna ganhou
-            else if (matrixTTT[0, 0] == matrixTTT[1, 0] && matrixTTT[2, 0] == matrixTTT[0, 0])
+            if (winner == null)
             {
-                if (matrixTTT[0, 0].Contains('x'))
-                    xWon = true;
+                for (int i = 0; i <3; i++)
+                {
+                    if (!string.IsNullOrEmpty(matrixTTT[0, i]) &&
+                        matrixTTT[0, i] == matrixTTT[1, i] &&
+                        matrixTTT[1, i] == matrixTTT[2, i])
+                    {
+                        winner = matrixTTT[0, i];
+                        break;
+                    }
+                }
             }
-            // Diagonal ganhou
-            else if (matrixTTT[0, 0] == matrixTTT[1, 1] && matrixTTT[2, 2] == matrixTTT[0, 0])
+            if (winner == null)
             {
-                if (matrixTTT[0, 0].Contains('x'))
-                    xWon = true;
+                // Diagonal ganhou
+                if (!string.IsNullOrEmpty(matrixTTT[0,0]) &&
+                    matrixTTT[0, 0] == matrixTTT[1, 1] &&
+                    matrixTTT[1, 1] == matrixTTT[2, 2])
+                {
+                    winner = matrixTTT[0, 0];
+                }
+                else if(!string.IsNullOrEmpty(matrixTTT[0, 2]) &&
+                    matrixTTT[0, 2] == matrixTTT[1, 1] &&
+                    matrixTTT[1, 1] == matrixTTT[2, 0])
+                {
+                    winner = matrixTTT[0, 2];
+                }
             }
-            // Diagonal invertida ganhou
-            else  if (matrixTTT[0, 2] == matrixTTT[1, 1] && matrixTTT[2, 0] == matrixTTT[0, 2])
+
+            if (winner == null)
             {
-                string teste = matrixTTT[0, 0];
-                if (matrixTTT[0, 0].Contains('x'))
-                    xWon = true;
+                ViewBag.Message = "Draw";
+            }
+            else if (winner.Contains('x'))
+            {
+                ViewBag.Message = "X Wins";
             }
             else
             {
-                ViewBag.Message = "Error";
-                return View();
+                ViewBag.Message = "O Wins";
             }
 
-            if (xWon)
-            {
-                ViewBag.Message = "X Wins";
-                return View();
-            }else
-            {
-                ViewBag.Message = "O wins";
-                return View();
-            }
+            return View();
         }
     }
 }

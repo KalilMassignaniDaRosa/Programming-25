@@ -1,51 +1,51 @@
 ﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-7">
+        <div class="col-md-6">
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="text-center">
                         <h4>Tic Tac Toe</h4>
+                        <hr class="my-3">
                     </div>
                     <form id="TicTacToeForm" method="post">
-                        <div class="form-group mb-3">
-                            <table class="table table-borderless align-middle">
+                        <div class="form-group mb-3 text-center">
+                            <table class="table table-borderless align-middle tic-tac-toe-table">
                                 <tr>
                                     <td>
-                                        <input type="text" name="A00" maxlength="1" pattern="[XOxo]" required/>
+                                        <input type="text" name="A00" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A01" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A01" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A02" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A02" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="A10" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A10" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A11" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A11" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A12" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A12" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="A20" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A20" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A21" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A21" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A22" maxlength="1" pattern="[XOxo]" required />
+                                        <input type="text" name="A22" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
                                     </td>
                                 </tr>
                             </table>
@@ -58,8 +58,8 @@
             </div>
             @if (!string.IsNullOrEmpty(ViewBag.Message))
             {
-                <div class="card mt-6 mx-auto mt-3">
-                    <div class="card-body text-center bg-success text-white">
+                <div class="card mt-3 mx-auto">
+                    <div class="card-body text-center  @(ViewBag.Message == "Draw" ? "bg-info" : "bg-success")  "text-white">
                         <p class="card-text"><strong>@ViewBag.Message</strong></p>
                     </div>
                 </div>
