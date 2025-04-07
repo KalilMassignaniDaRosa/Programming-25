@@ -30,11 +30,7 @@ body {
   text-align: start;
 }
 
-/* Jogo da velha */ 
-input {
-    text-align: center;
-}
-
+/* Jogo da velha */
 .tic-tac-toe-input {
     width: 60px;
     height: 60px;
@@ -53,12 +49,12 @@ input {
     border-collapse: collapse; /* Junta as bordas das células */
 }
 
-    .tic-tac-toe-table td {
-        width: 60px;
-        height: 60px;
-        text-align: center;
-        position: relative;
-    }
+.tic-tac-toe-table td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    position: relative;
+}
 
     /* Bordas do jogo */
     .tic-tac-toe-table td {

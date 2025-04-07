@@ -17,35 +17,35 @@
                             <table class="table table-borderless align-middle tic-tac-toe-table">
                                 <tr>
                                     <td>
-                                        <input type="text" name="A00" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
+                                        <input type="text" name="A00" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A01" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
+                                        <input type="text" name="A01" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A02" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="text" name="A10" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
-                                    </td>
-                                    <td>
-                                        <input type="text" name="A11" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
-                                    </td>
-                                    <td>
-                                        <input type="text" name="A12" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
+                                        <input type="text" name="A02" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="A20" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
+                                        <input type="text" name="A10" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A21" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
+                                        <input type="text" name="A11" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
                                     </td>
                                     <td>
-                                        <input type="text" name="A22" maxlength="1" pattern="[XOxo]" required class="tic-tac-toe-input" />
+                                        <input type="text" name="A12" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="A20" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A21" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
+                                    </td>
+                                    <td>
+                                        <input type="text" name="A22" maxlength="1" pattern="[XOxo]" class="tic-tac-toe-input" />
                                     </td>
                                 </tr>
                             </table>
@@ -62,6 +62,12 @@
                     <div class="card-body text-center  @(ViewBag.Message == "Draw" ? "bg-info" : "bg-success")  "text-white">
                         <p class="card-text"><strong>@ViewBag.Message</strong></p>
                     </div>
+                </div>
+            }
+            @if (ViewBag.Alert != null)
+            {
+                <div class="alert alert-danger text-center">
+                    @ViewBag.Alert
                 </div>
             }
         </div>

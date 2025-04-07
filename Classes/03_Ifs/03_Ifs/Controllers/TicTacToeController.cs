@@ -17,19 +17,27 @@ namespace _03_Ifs.Controllers
             string A20, string A21, string A22
             )
         {
+            if (string.IsNullOrWhiteSpace(A00) && string.IsNullOrWhiteSpace(A01) && string.IsNullOrWhiteSpace(A02) &&
+            string.IsNullOrWhiteSpace(A10) && string.IsNullOrWhiteSpace(A11) && string.IsNullOrWhiteSpace(A12) &&
+            string.IsNullOrWhiteSpace(A20) && string.IsNullOrWhiteSpace(A21) && string.IsNullOrWhiteSpace(A22))
+            {
+                ViewBag.Alert = "Please fill in all fields before submitting!";
+                return View();
+            }
+
             string[,] matrixTTT = new string[3, 3];
 
-            matrixTTT[0, 0] = A00.ToLower();
-            matrixTTT[0, 1] = A01.ToLower();
-            matrixTTT[0, 2] = A02.ToLower();
+            matrixTTT[0, 0] = A00?.ToLower() ?? "";
+            matrixTTT[0, 1] = A01?.ToLower() ?? "";
+            matrixTTT[0, 2] = A02?.ToLower() ?? "";
 
-            matrixTTT[1, 0] = A10.ToLower();
-            matrixTTT[1, 1] = A11.ToLower();
-            matrixTTT[1, 2] = A12.ToLower();
+            matrixTTT[1, 0] = A10?.ToLower() ?? "";
+            matrixTTT[1, 1] = A11?.ToLower() ?? "";
+            matrixTTT[1, 2] = A12?.ToLower() ?? "";
 
-            matrixTTT[2, 0] = A20.ToLower();
-            matrixTTT[2, 1] = A21.ToLower();
-            matrixTTT[2, 2] = A22.ToLower();
+            matrixTTT[2, 0] = A20?.ToLower() ?? "";
+            matrixTTT[2, 1] = A21?.ToLower() ?? "";
+            matrixTTT[2, 2] = A22?.ToLower() ?? "";
 
             string winner = null!;
 
