@@ -55,16 +55,16 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public string PrintFatorial(int count = 10)
+    public string PrintSumArithmeticSequence(int count = 10)
     {
         string ret = string.Empty;
 
-        ret = Fatorial(1, count, 0);
+        ret = SumArithmeticSequence(1, count, 0);
 
         return ret;
     }
 
-    private string Fatorial(int n, int count,int total)
+    private string SumArithmeticSequence(int n, int count,int total)
     {
         string ret = string.Empty;
         total +=  count;
@@ -75,8 +75,51 @@ public class HomeController : Controller
         ret += $"{count} ";
         count--;
 
-        ret += Fatorial(n + 1, count, total);
+        ret += SumArithmeticSequence(n + 1, count, total);
 
         return ret;
+    }
+
+    [HttpGet]
+    public string PrintCountCharacters(string text = "Hello World")
+    {
+        string returnString = string.Empty;
+
+        returnString = CountCharacters(text, 0, 0);
+
+        return returnString;
+    }
+
+    private string CountCharacters(string str, int pos, int total)
+    {
+        int sum = total + 1;
+
+        if (pos >= str.Length - 1)
+            return $"|{str[pos]}| = {sum}";
+
+        string ret = $"|{str[pos]}| + ";
+        ret += CountCharacters(str, pos + 1, sum);
+
+        return ret;
+    }
+
+    public string PrintIsPalindrome(string word = "Radar")
+    {
+        string lower = word.ToLower();
+
+        return $"{word} " + IsPalindrome(lower, 0, word.Length - 1);
+    }
+
+    private string IsPalindrome(string word, int left, int right)
+    {
+        // Se os indices se cruzaram e um palindromo
+        if (left >= right)
+            return "is a palindrome";
+
+        if (word[left] != word[right])
+            return "isn't a palindrome";
+
+        // Se move pro meio
+        return IsPalindrome(word, left + 1, right - 1);
     }
 }
