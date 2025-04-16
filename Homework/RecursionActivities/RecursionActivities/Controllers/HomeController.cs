@@ -30,13 +30,15 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public string PrintNumbersDecrease(int count = 10)
+    public IActionResult PrintNumbersDecrease(int count = 10)
     {
         string ret = string.Empty;
-
         ret = NumbersDecrease(1, count);
 
-        return ret;
+        ViewBag.Title = "Numbers Decreasing from " + count;
+        ViewBag.Result = ret;
+
+        return View("Results");
     }
 
     private string NumbersDecrease(int n, int count)
@@ -55,13 +57,16 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public string PrintSumArithmeticSequence(int count = 10)
+    public IActionResult PrintSumArithmeticSequence(int count = 10)
     {
         string ret = string.Empty;
 
         ret = SumArithmeticSequence(1, count, 0);
 
-        return ret;
+        ViewBag.Title = "Sum of Arithmetic Sequence";
+        ViewBag.Result = ret;
+
+        return View("Results");
     }
 
     private string SumArithmeticSequence(int n, int count,int total)
@@ -70,7 +75,7 @@ public class HomeController : Controller
         total +=  count;
 
         if (count < 2)
-            return $"{count} \nTotal: {total}";
+            return $"{count} \n    Total: {total}";
 
         ret += $"{count} ";
         count--;
@@ -81,13 +86,16 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public string PrintCountCharacters(string text = "Hello World")
+    public IActionResult PrintCountCharacters(string text = "Hello World")
     {
-        string returnString = string.Empty;
+        string ret = string.Empty;
 
-        returnString = CountCharacters(text, 0, 0);
+        ret = CountCharacters(text, 0, 0);
 
-        return returnString;
+        ViewBag.Title = $"Character Count in \"{text}\"";
+        ViewBag.Result = ret;
+
+        return View("Results");
     }
 
     private string CountCharacters(string str, int pos, int total)
@@ -103,11 +111,16 @@ public class HomeController : Controller
         return ret;
     }
 
-    public string PrintIsPalindrome(string word = "Radar")
+    [HttpGet]
+    public IActionResult PrintIsPalindrome(string word = "Radar")
     {
         string lower = word.ToLower();
+        string ret = $"{word} " + IsPalindrome(lower, 0, word.Length - 1);
 
-        return $"{word} " + IsPalindrome(lower, 0, word.Length - 1);
+        ViewBag.Title = "Palindrome Check";
+        ViewBag.Result = ret;
+
+        return View("Results");
     }
 
     private string IsPalindrome(string word, int left, int right)

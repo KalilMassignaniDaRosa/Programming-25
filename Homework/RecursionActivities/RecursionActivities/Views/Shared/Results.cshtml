@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Recursion Results";
+}
+
+@if (ViewBag.Title != null)
+{
+    <h3>@ViewBag.Title</h3>
+}
+
+<pre style="background-color: #f4f4f4; padding: 15px; border-radius: 10px;">
+    @ViewBag.Result
+</pre>
+
+<a asp-action="Index" class="btn btn-primary">Back</a>

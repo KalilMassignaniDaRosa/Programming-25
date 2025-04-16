@@ -1,8 +1,103 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Recursive Operations";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <h2 class="text-center mb-4">Recursive Operations</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    Decrementing Numbers
+                </div>
+                <div class="card-body">
+                    <form method="get" asp-action="PrintNumbersDecrease">
+                        <div class="form-group">
+                            <label for="count1">Initial Count:</label>
+                            <input type="number" id="count1" name="count" class="form-control" value="10" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    @if (ViewBag.ResultNumbersDecrease != null)
+                    {
+                        <hr />
+                        <h5 class="text-center font-weight-bold">Result:</h5>
+                        <pre>@ViewBag.ResultNumbersDecrease</pre>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    Sum of Arithmetic Sequence
+                </div>
+                <div class="card-body">
+                    <form method="get" asp-action="PrintSumArithmeticSequence">
+                        <div class="form-group">
+                            <label for="count2">Initial Count:</label>
+                            <input type="number" id="count2" name="count" class="form-control" value="10" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    @if (ViewBag.ResultSumArithmetic != null)
+                    {
+                        <hr />
+                        <h5 class="text-center font-weight-bold">Result:</h5>
+                        <pre>@ViewBag.ResultSumArithmetic</pre>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    Count Characters
+                </div>
+                <div class="card-body">
+                    <form method="get" asp-action="PrintCountCharacters">
+                        <div class="form-group">
+                            <label for="text">Text:</label>
+                            <input type="text" id="text" name="text" class="form-control" value="Hello World" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    @if (ViewBag.ResultCountCharacters != null)
+                    {
+                        <hr />
+                        <h5 class="text-center font-weight-bold">Result:</h5>
+                        <pre>@ViewBag.ResultCountCharacters</pre>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    Palindrome Check
+                </div>
+                <div class="card-body">
+                    <form method="get" asp-action="PrintIsPalindrome">
+                        <div class="form-group">
+                            <label for="word">Word:</label>
+                            <input type="text" id="word" name="word" class="form-control" value="Radar" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    @if (ViewBag.ResultIsPalindrome != null)
+                    {
+                        <hr />
+                        <h5 class="text-center font-weight-bold">Result:</h5>
+                        <pre>@ViewBag.ResultIsPalindrome</pre>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

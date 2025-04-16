@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Operações Recursivas";
+}
+
+<h2>Operações Recursivas</h2>
+
+<div class="mb-4 p-3 border rounded">
+    <h3>Números Decrescentes</h3>
+    <form method="get" asp-action="PrintNumbersDecrease">
+        <div class="form-group">
+            <label for="count1">Valor Inicial (count):</label>
+            <input type="number" id="count1" name="count" class="form-control" value="10" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+    </form>
+</div>
+
+<div class="mb-4 p-3 border rounded">
+    <h3>Soma da Sequência Aritmética</h3>
+    <form method="get" asp-action="PrintSumArithmeticSequence">
+        <div class="form-group">
+            <label for="count2">Valor Inicial (count):</label>
+            <input type="number" id="count2" name="count" class="form-control" value="10" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+    </form>
+</div>
+
+<div class="mb-4 p-3 border rounded">
+    <h3>Contar Caracteres</h3>
+    <form method="get" asp-action="PrintCountCharacters">
+        <div class="form-group">
+            <label for="text">Texto:</label>
+            <input type="text" id="text" name="text" class="form-control" value="Hello World" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+    </form>
+</div>
+
+<div class="mb-4 p-3 border rounded">
+    <h3>Verificar Palíndromo</h3>
+    <form method="get" asp-action="PrintIsPalindrome">
+        <div class="form-group">
+            <label for="word">Palavra:</label>
+            <input type="text" id="word" name="word" class="form-control" value="Radar" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Enviar</button>
+    </form>
+</div>
