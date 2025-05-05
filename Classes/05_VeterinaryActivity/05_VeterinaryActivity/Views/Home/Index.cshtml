@@ -1,0 +1,62 @@
+﻿@model List<_05_VeterinaryActivity.Models.ClassInfo>
+
+@{
+    ViewData["Title"] = "Classes";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">Veterinary Classes</h1>
+    <div class="row g-4">
+        @foreach (var cls in Model)
+        {
+            <div class="col-12 col-sm-6 col-lg-4">
+                <!-- Classe dinâmica-->
+                <div class="uml-card @(cls.Properties.Count + cls.Fields.Count + cls.Methods.Count <= 3 ? "compact" : "")">
+                    <div class="uml-class-name">
+                        <h3>
+                            @cls.ClassName
+                            @if (!string.IsNullOrEmpty(cls.BaseClass))
+                            {
+                                <span class="uml-inheritance"> : @cls.BaseClass</span>
+                            }
+                        </h3>
+                    </div>
+
+                    @if (cls.Properties.Any() || cls.Fields.Any())
+                    {
+                        <div class="uml-section">
+                            @foreach (var p in cls.Properties)
+                            {
+                                <div class="uml-member @AccessibilityHelper.CssClass(p.Accessibility)">
+                                    <span class="uml-symbol">@AccessibilityHelper.Symbol(p.Accessibility)</span>
+                                    <span class="uml-property">@p.Name: <em>@p.PropertyType</em></span>
+                                </div>
+                            }
+                            @foreach (var f in cls.Fields)
+                            {
+                                <div class="uml-member @AccessibilityHelper.CssClass(f.Accessibility)">
+                                    <span class="uml-symbol">@AccessibilityHelper.Symbol(f.Accessibility)</span>
+                                    <span class="uml-field">@f.Name: <em>@f.FieldType</em></span>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    @if (cls.Methods.Any())
+                    {
+                        <div class="uml-divider"></div>
+                        <div class="uml-section">
+                            @foreach (var m in cls.Methods)
+                            {
+                                <div class="uml-member @AccessibilityHelper.CssClass(m.Accessibility)">
+                                    <span class="uml-symbol">@AccessibilityHelper.Symbol(m.Accessibility)</span>
+                                    <span class="uml-method">@m.Name</span>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</div>

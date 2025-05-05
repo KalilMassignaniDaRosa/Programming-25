@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\",
+  "WorkspaceRootPath": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming-25\\classes\\01_begin\\01_begin\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming-25\\classes\\01_begin\\01_begin\\views\\test\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\test\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming-25\\classes\\01_begin\\01_begin\\views\\test\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\test\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming-25\\classes\\01_begin\\01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\406157\\documents\\programming-25\\classes\\01_begin\\01_begin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\views\\test\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\test\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|c:\\users\\kalil\\documents\\c\u00F3digos\\programming-25\\classes\\01_begin\\01_begin\\views\\test\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B3BA3A49-430B-4D10-8E45-A4E1253709D5}|01_Begin\\01_Begin.csproj|solutionrelative:01_begin\\views\\test\\test.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,43 +30,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "01_Begin\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "01_Begin\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-11T00:14:49.494Z"
+              "WhenOpened": "2025-03-11T00:14:49.494Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "01_Begin\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "01_Begin\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-11T00:17:16.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Test.cshtml",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Test.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Test.cshtml",
               "RelativeDocumentMoniker": "01_Begin\\Views\\Test\\Test.cshtml",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Test.cshtml",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Test.cshtml",
               "RelativeToolTip": "01_Begin\\Views\\Test\\Test.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -74,28 +71,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Index.cshtml",
               "RelativeDocumentMoniker": "01_Begin\\Views\\Test\\Index.cshtml",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Views\\Test\\Index.cshtml",
               "RelativeToolTip": "01_Begin\\Views\\Test\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-10T23:47:27.498Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TestController.cs",
-              "DocumentMoniker": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Controllers\\TestController.cs",
+              "DocumentMoniker": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Controllers\\TestController.cs",
               "RelativeDocumentMoniker": "01_Begin\\Controllers\\TestController.cs",
-              "ToolTip": "C:\\Users\\406157\\Documents\\Programming-25\\Classes\\01_Begin\\01_Begin\\Controllers\\TestController.cs",
+              "ToolTip": "C:\\Users\\Kalil\\Documents\\C\u00F3digos\\Programming-25\\Classes\\01_Begin\\01_Begin\\Controllers\\TestController.cs",
               "RelativeToolTip": "01_Begin\\Controllers\\TestController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T23:17:05.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T23:17:05.341Z"
             }
           ]
         }

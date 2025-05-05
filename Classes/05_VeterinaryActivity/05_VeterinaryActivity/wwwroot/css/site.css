@@ -1,0 +1,134 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* Classes */
+.uml-card {
+    background: white;
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+    margin: 0.5rem;
+    flex-grow: 1;
+    transition: transform 0.2s;
+}
+    /* Efeito para cima*/
+    .uml-card:hover {
+        transform: translateY(-5px);
+    }
+
+.uml-class-name {
+    background: #2c3e50;
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+}
+
+    .uml-class-name h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+.uml-divider {
+    border-top: 1px solid #95a5a6;
+    margin: 0 0.75rem;
+}
+
+.uml-section {
+    padding: 0.5rem 0.75rem;
+}
+
+.uml-member {
+    padding: 0.2rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.3;
+    font-family: 'Courier New', monospace;
+}
+
+.uml-symbol {
+    font-weight: bold;
+    min-width: 25px;
+    font-size: 1.1em;
+}
+
+.uml-member.public .uml-symbol {
+    color: #2ecc71;
+}
+
+.uml-member.private .uml-symbol {
+    color: #e74c3c;
+}
+
+.uml-member.protected .uml-symbol {
+    color: #3498db;
+}
+
+.uml-property,
+.uml-field,
+.uml-method {
+    color: #2c3e50;
+}
+
+em {
+    color: #7f8c8d;
+    font-style: normal;
+    font-size: 0.9rem;
+}
+
+.uml-inheritance {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+/* Versao compacta */
+.uml-card.compact {
+    min-width: 200px;
+}
+
+    .uml-card.compact .uml-class-name {
+        padding: 0.5rem;
+    }
+
+        .uml-card.compact .uml-class-name h3 {
+            font-size: 1rem;
+        }
+
+    .uml-card.compact .uml-member {
+        font-size: 0.85rem;
+        padding: 0.1rem 0;
+    }

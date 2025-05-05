@@ -1,4 +1,4 @@
-namespace _05_VeterinaryActivitie.Models
+namespace _05_VeterinaryActivity.Models
 {
     public class ErrorViewModel
     {

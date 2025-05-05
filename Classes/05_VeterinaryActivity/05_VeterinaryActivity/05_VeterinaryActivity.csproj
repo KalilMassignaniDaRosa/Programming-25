@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>_05_VeterinaryActivitie</RootNamespace>
+    <RootNamespace>_05_VeterinaryActivity</RootNamespace>
   </PropertyGroup>
 
 </Project>
