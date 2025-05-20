@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Poo", "06_Poo\06_Poo.csproj", "{7EFBE401-7B6D-4052-9F65-06FB13BBF553}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PooModel", "Model\PooModel.csproj", "{324C1E44-AAC6-4562-B6D2-5C175CA7EEA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{DAC563DC-8AB1-47B2-9DB6-348BFCA2575D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{324C1E44-AAC6-4562-B6D2-5C175CA7EEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{324C1E44-AAC6-4562-B6D2-5C175CA7EEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{324C1E44-AAC6-4562-B6D2-5C175CA7EEA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC563DC-8AB1-47B2-9DB6-348BFCA2575D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC563DC-8AB1-47B2-9DB6-348BFCA2575D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC563DC-8AB1-47B2-9DB6-348BFCA2575D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC563DC-8AB1-47B2-9DB6-348BFCA2575D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

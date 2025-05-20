@@ -1,24 +1,27 @@
 ﻿namespace PooModel
 {
-    class OrderItem
+    public class OrderItem
     {
         public int Id { get; set; }
         public Product? Product { get; set; }
         public double Quantity { get; set; }
         public double PurchasePrice { get; set; }
 
-        public bool Validade()
+        public bool Validate()
         {
-            return true;
+            bool isValid = true;
+
+            isValid = (this.Id > 0) && (this.Quantity > 0) &&
+                (Product != null) && (this.PurchasePrice > 0);
+
+            return isValid;
         }
 
-        public OrderItem Retrieve()
+        public OrderItem Retrieve(int orderId)
         {
             return new OrderItem();
         }
 
-        public void Save(OrderItem orderItem)
-        {
-        }
+        
     }
 }

@@ -10,7 +10,7 @@ namespace _06_Poo.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private Order _order;
+    private PooModel.Order _order;
 
     public HomeController(ILogger<HomeController> logger)
     {

@@ -1,25 +1,35 @@
 ﻿namespace PooModel
 {
-    class Order
+    public class Order
     {
+        #region Atributes
         public int Id { get; set; }
         public Costumer? Costumer { get; set; }
         public DateTime OrderDate { get; set; }
-        public string? ShippingAddress { get; set; }
+        public Address ShippingAddress { get; set; }
         public List<OrderItem>? OrderItems { get; set; }
+        #endregion Atributes
 
-        public bool Validade()
+        public Order()
         {
-            return true;
+            OrderDate = DateTime.Now;
+            OrderItems = new List<OrderItem>();
         }
 
-        public Order Retrieve()
+        // Herdando metodo construtor atraves de sobrecarga
+        public Order(int orderId) : this()
         {
-            return new Order();
+            this.Id = orderId;
         }
 
-        public void Save(Order order)
+        public bool Validate()
         {
+            bool isValid = true;
+
+            isValid = (ShippingAddress != null)&&
+                (this.Id > 0) && (this.OrderItems!.Count > 0) && (Costumer != null);
+
+            return isValid;
         }
     }
 }

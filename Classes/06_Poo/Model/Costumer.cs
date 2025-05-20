@@ -4,23 +4,18 @@
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public string? HomeAddress { get; set; }
-        public string? WorkAddress { get; set; }
+        public List<Address>? AddressList { get; set; }
         public static int InstanceCount = 0;
         public int ObjectCount = 0;
 
         public bool Validate()
         {
-            return true;
-        }
+            bool isValid = true;
 
-        public Costumer Retrieve()
-        {
-            return new Costumer();
-        }
+            isValid = !string.IsNullOrEmpty(this.Name) &&
+                (this.Id > 0) && (AddressList != null);
 
-        public void Save(Costumer costumer)
-        {
+            return isValid;
         }
     }
 }
