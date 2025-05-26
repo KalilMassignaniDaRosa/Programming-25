@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Model\PooModel.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
 </Project>
