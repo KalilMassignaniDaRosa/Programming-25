@@ -7,15 +7,65 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    class ProductRepository
+    public class ProductRepository
     {
-        public Product Retrieve()
+        public Product Retrieve(int id)
         {
-            return new Product();
+            foreach (Product p in CostumerData.Products)
+            {
+                if (p.Id == id)
+                    return p;
+            }
+
+            return null!;
         }
 
-        public void Save(Product product)
+        public List<Product> RetrieveByName(string name)
         {
+            List<Product> ret = new();
+
+            foreach (Product p in CostumerData.Products)
+            {
+                if (p.Name!.ToLower().Contains(name.ToLower()))
+                    ret.Add(p);
+            }
+
+            return ret;
+        }
+
+        public List<Product> RetriveAll()
+        {
+            return CostumerData.Products;
+        }
+
+        public void Save(Product Product)
+        {
+            Product.Id = GetCount() + 1;
+            CostumerData.Products.Add(Product);
+        }
+
+        public void Update(Product newProduct)
+        {
+            Product oldProduct = Retrieve(newProduct.Id);
+
+            oldProduct.Name = newProduct.Name;
+            oldProduct.Description = newProduct.Description;
+            oldProduct.CurrentPrice = newProduct.CurrentPrice;
+        }
+
+        public bool Delete(Product Product)
+        {
+            return CostumerData.Products.Remove(Product);
+        }
+
+        public bool DeleteById(int id)
+        {
+            return Delete(Retrieve(id));
+        }
+
+        public int GetCount()
+        {
+            return CostumerData.Products.Count;
         }
     }
 }
