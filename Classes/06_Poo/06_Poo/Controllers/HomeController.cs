@@ -19,15 +19,15 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        Costumer c1 = new();
+        Customer c1 = new();
         c1.Name = "Frodo";
         c1.ObjectCount++;
-        Costumer.InstanceCount++;
+        Customer.InstanceCount++;
 
-        var c2 = new Costumer();
+        var c2 = new Customer();
         c2.Name = "Galadriel";
         c2.ObjectCount++;
-        Costumer.InstanceCount++;
+        Customer.InstanceCount++;
 
         return View();
     }

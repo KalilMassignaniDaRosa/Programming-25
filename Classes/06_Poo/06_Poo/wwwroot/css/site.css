@@ -29,3 +29,183 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+
+/* Fonte global */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Botões, links e inputs */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Espaçamento Inferior */
+body {
+    margin-bottom: 60px;
+}
+
+/* Container Principal */
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid #dee2e6;
+}
+
+thead {
+    background-color: #e9ecef;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+/* Botões */
+.btn-light {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #343a40;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .btn-light:hover {
+        background-color: #e2e6ea;
+        color: #212529;
+    }
+
+/* Formulários */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+    .form-control:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+/* Mensagem de “Nenhum Registro” */
+.div-no-register {
+    padding: 1rem;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #007bff !important;
+    transition: color 0.2s;
+}
+
+.navbar-brand:hover {
+    color: deepskyblue !important;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: #343a40 !important;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 0.25rem;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+    color: deepskyblue !important;
+}
+
+/* Main */
+main[role="main"] {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer.footer {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    border-top: 1px solid #dee2e6;
+    margin-top: 2rem;
+}
+
+    footer.footer .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: #6c757d;
+    }
+
+    footer.footer a {
+        color: #6c757d;
+        text-decoration: none;
+        transition: color 0.2s;
+    } 
+
+/* Responsividade */
+@media (max-width: 576px) {
+    h1.display-4 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .table {
+        font-size: 0.9rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}

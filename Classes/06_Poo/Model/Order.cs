@@ -4,7 +4,7 @@
     {
         #region Atributes
         public int Id { get; set; }
-        public Costumer? Costumer { get; set; }
+        public Customer? Costumer { get; set; }
         public DateTime OrderDate { get; set; }
         public Address ShippingAddress { get; set; }
         public List<OrderItem>? OrderItems { get; set; }

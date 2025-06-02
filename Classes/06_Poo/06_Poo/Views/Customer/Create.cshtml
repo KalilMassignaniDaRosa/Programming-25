@@ -1,0 +1,33 @@
+﻿@model PooModel.Customer
+
+@{
+    ViewData["Title"] = "Create Customer";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-5">Create Customer</h1>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Create" asp-controller="Customer" method="post" id="formCustomer">
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Name" class="form-label">Name</label>
+                    <input asp-for="Name" class="form-control" required />
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" asp-controller="Customer" class="btn btn-secondary">
+                        Cancel
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        Register
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

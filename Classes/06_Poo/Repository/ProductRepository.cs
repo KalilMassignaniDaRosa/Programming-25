@@ -11,7 +11,7 @@ namespace Repository
     {
         public Product Retrieve(int id)
         {
-            foreach (Product p in CostumerData.Products)
+            foreach (Product p in CustomerData.Products)
             {
                 if (p.Id == id)
                     return p;
@@ -24,7 +24,7 @@ namespace Repository
         {
             List<Product> ret = new();
 
-            foreach (Product p in CostumerData.Products)
+            foreach (Product p in CustomerData.Products)
             {
                 if (p.Name!.ToLower().Contains(name.ToLower()))
                     ret.Add(p);
@@ -35,13 +35,13 @@ namespace Repository
 
         public List<Product> RetriveAll()
         {
-            return CostumerData.Products;
+            return CustomerData.Products;
         }
 
         public void Save(Product Product)
         {
             Product.Id = GetCount() + 1;
-            CostumerData.Products.Add(Product);
+            CustomerData.Products.Add(Product);
         }
 
         public void Update(Product newProduct)
@@ -55,7 +55,7 @@ namespace Repository
 
         public bool Delete(Product Product)
         {
-            return CostumerData.Products.Remove(Product);
+            return CustomerData.Products.Remove(Product);
         }
 
         public bool DeleteById(int id)
@@ -65,7 +65,7 @@ namespace Repository
 
         public int GetCount()
         {
-            return CostumerData.Products.Count;
+            return CustomerData.Products.Count;
         }
     }
 }

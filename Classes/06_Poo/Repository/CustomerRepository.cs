@@ -2,11 +2,11 @@
 
 namespace Repository
 {
-    public class CostumerRepository
+    public class CustomerRepository
     {
-        public Costumer Retrieve(int id)
+        public Customer Retrieve(int id)
         {
-            foreach(Costumer c in CostumerData.Costumers)
+            foreach(Customer c in CustomerData.Customers)
             {
                 if(c.Id == id)
                     return c;
@@ -15,11 +15,11 @@ namespace Repository
             return null!;
         }
 
-        public List<Costumer> RetrieveByName (string name)
+        public List<Customer> RetrieveByName (string name)
         {
-            List<Costumer> ret = new();
+            List<Customer> ret = new();
 
-            foreach(Costumer c in CostumerData.Costumers)
+            foreach(Customer c in CustomerData.Customers)
             {
                 if( c.Name!.ToLower().Contains(name.ToLower()))
                     ret.Add(c);
@@ -28,27 +28,27 @@ namespace Repository
             return ret;
         }
 
-        public List<Costumer> RetriveAll()
+        public List<Customer> RetriveAll()
         {
-            return CostumerData.Costumers;
+            return CustomerData.Customers;
         }
 
-        public void Save(Costumer costumer)
+        public void Save(Customer costumer)
         {
             costumer.Id = GetCount() + 1;
-            CostumerData.Costumers.Add(costumer);
+            CustomerData.Customers.Add(costumer);
         }
 
-        public void Update(Costumer newCostumer)
+        public void Update(Customer newCostumer)
         {
-            Costumer oldCostumer = Retrieve(newCostumer.Id);
+            Customer oldCostumer = Retrieve(newCostumer.Id);
             oldCostumer.Name = newCostumer.Name;
             oldCostumer.AddressList = newCostumer.AddressList;
         }
 
-        public bool Delete(Costumer costumer)
+        public bool Delete(Customer costumer)
         {
-            return CostumerData.Costumers.Remove(costumer);
+            return CustomerData.Customers.Remove(costumer);
         }
 
         public bool DeleteById(int id)
@@ -58,7 +58,7 @@ namespace Repository
 
         public int GetCount()
         {
-            return CostumerData.Costumers.Count;
+            return CustomerData.Customers.Count;
         }
     }
 }
