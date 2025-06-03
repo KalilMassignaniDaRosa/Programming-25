@@ -29,6 +29,7 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 FillCustomerData();
+FillProductData();
 
 app.Run();
 
@@ -43,16 +44,33 @@ static void FillCustomerData()
             AddressList = new List<Address>{
                 new Address { 
                     id = i,
-                    StreetLine1 = "Rua da minha casa",
-                    StreetLine2 = "Sua casa",
-                    PostalCode = 89560, 
+                    StreetLine1 = "My house street",
+                    StreetLine2 = "Your house",
+                    PostalCode = 89560000, 
                     Country = "Brasil", 
                     City = "Videira",
                     State = "Sc",
-                    AddressType = "Casa" 
+                    AddressType = "Home" 
                 }
             },
         };
         CustomerData.Customers.Add(customer);
+    }
+}
+
+static void FillProductData()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        Random rnd = new Random();
+
+        Product product = new()
+        {
+            Id = i + 1,
+            Name = $"Product {i}",
+            Description = $"Product {i} description",
+            CurrentPrice = rnd.Next(1, 100)
+        };
+        ProductData.Products.Add(product);
     }
 }

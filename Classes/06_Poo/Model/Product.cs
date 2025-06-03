@@ -1,4 +1,5 @@
-﻿namespace PooModel
+﻿
+namespace PooModel
 {
     public class Product
     {
@@ -19,6 +20,6 @@
             return isValid;
         }
 
-        
+       
     }
 }

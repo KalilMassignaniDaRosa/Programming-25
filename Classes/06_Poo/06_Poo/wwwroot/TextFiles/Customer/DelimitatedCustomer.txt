@@ -1,0 +1,10 @@
+1;Customer 0;0;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+2;Customer 1;1;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+3;Customer 2;2;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+4;Customer 3;3;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+5;Customer 4;4;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+6;Customer 5;5;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+7;Customer 6;6;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+8;Customer 7;7;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+9;Customer 8;8;Videira;Sc;Brasil;My house street;Your house;89560000;Home;
+10;Customer 9;9;Videira;Sc;Brasil;My house street;Your house;89560000;Home;

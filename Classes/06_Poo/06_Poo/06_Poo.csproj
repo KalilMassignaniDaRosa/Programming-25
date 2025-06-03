@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\TextFiles\" />
+    <Folder Include="wwwroot\TextFiles\Product\" />
+  </ItemGroup>
+
 </Project>
