@@ -1,1 +1,16 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Export Completed";
+}
+
+<div class="text-center mt-5">
+    <h2 class="display-6 text-success">Export completed successfully!</h2>
+
+    <div class="mt-4">
+        <a asp-action="Index" asp-controller="Customer" class="btn btn-primary">
+            Back to customer list
+        </a>
+        <a href="~/TextFiles/Customer/DelimitatedCustomer.txt" download class="btn btn-outline-secondary">
+            Download file
+        </a>
+    </div>
+</div>

@@ -9,6 +9,6 @@ namespace Repository
 {
     public class ProductData
     {
-        public static List<Product> Products { get; set; } = [];
+        public static List<Product> Products { get; set; } = new List<Product>();
     }
 }

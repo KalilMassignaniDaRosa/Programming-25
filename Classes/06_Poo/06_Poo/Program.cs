@@ -40,7 +40,7 @@ static void FillCustomerData()
         Customer customer = new()
         {
             Id = i + 1,
-            Name = $"Customer {i}",
+            Name = $"Customer {i+1}",
             AddressList = new List<Address>{
                 new Address { 
                     id = i,

@@ -8,6 +8,11 @@
         public static int InstanceCount = 0;
         public int ObjectCount = 0;
 
+        public Customer()
+        {
+            AddressList = new List<Address>();
+        }
+
         public bool Validate()
         {
             bool isValid = true;

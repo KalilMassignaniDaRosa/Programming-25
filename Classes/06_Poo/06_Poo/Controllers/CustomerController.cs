@@ -32,11 +32,12 @@ namespace _06_Poo.Controllers
         [HttpPost]
         public IActionResult Create(Customer c)
         {
-            _customerRepository!.Save(c);
-
-            List<Customer> customers = _customerRepository!.RetriveAll();
-
-            return View("Index", customers);
+            if (ModelState.IsValid)
+            {
+                _customerRepository!.Save(c);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(c);
         }
 
         [HttpGet]
@@ -46,11 +47,21 @@ namespace _06_Poo.Controllers
             string fileContent = string.Empty;
             foreach (Customer c in CustomerData.Customers)
             {
-                foreach (Address address in c.AddressList!)
+                if (c.AddressList != null && c.AddressList.Any())
                 {
-                    fileContent += $"{c.Id};{c.Name};{address.id};{address.City};{address.State};{address.Country};{address.StreetLine1};{address.StreetLine2};{address.PostalCode};{address.AddressType};\n";
+                    foreach (Address address in c.AddressList)
+                    {
+                        fileContent += $"{c.Id};{c.Name};{address.id};{address.City};" +
+                                       $"{address.State};{address.Country};{address.StreetLine1};" +
+                                       $"{address.StreetLine2};{address.PostalCode};" +
+                                       $"{address.AddressType};\n";
+                    }
                 }
-
+                else
+                {
+                    // sem endereço: Id;Name + (9) “;” em branco + newline
+                    fileContent += $"{c.Id};{c.Name};;;;;;;;;\n";
+                }
             }
 
             var path = Path.Combine(
@@ -66,15 +77,12 @@ namespace _06_Poo.Controllers
                 "DelimitatedCustomer.txt"
             );
 
-            if(!System.IO.File.Exists( filepath ) )
-            {
-                using (StreamWriter sw = System.IO.File.CreateText( filepath ) )
-                {
-                    sw.Write(fileContent);
-                }
-            }
+            System.IO.File.WriteAllText(filepath, fileContent);
+
 
             return View("Export");
         }
+
+
     }
 }

@@ -2,24 +2,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Repository;
 using PooModel;
+using System.Globalization;
 
 namespace _06_Poo.Controllers
 {
     public class ProductController : Controller
     {
         private readonly IWebHostEnvironment _environment;
-        private ProductRepository? _ProductRepository;
+        private ProductRepository? _productRepository;
 
         public ProductController(IWebHostEnvironment environment)
         {
-            _ProductRepository = new ProductRepository();
+            _productRepository = new ProductRepository();
             _environment = environment;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            List<Product> Products = _ProductRepository!.RetriveAll();
+            List<Product> Products = _productRepository!.RetriveAll();
 
             return View(Products);
         }
@@ -31,13 +32,14 @@ namespace _06_Poo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Product c)
+        public IActionResult Create(Product p)
         {
-            _ProductRepository!.Save(c);
-
-            List<Product> Products = _ProductRepository!.RetriveAll();
-
-            return View("Index", Products);
+            if (ModelState.IsValid)
+            {
+                _productRepository!.Save(p);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(p);
         }
 
         [HttpGet]
@@ -46,7 +48,7 @@ namespace _06_Poo.Controllers
             string fileContent = string.Empty;
             foreach (Product p in ProductData.Products)
             {
-                fileContent += $"{p.Id};{p.Name};{p.Description};{p.CurrentPrice}\n";
+                fileContent += $"{p.Id};{p.Name};{p.Description};{p.CurrentPrice};\n";
             }
 
             var path = Path.Combine(
@@ -62,13 +64,7 @@ namespace _06_Poo.Controllers
                 "DelimitatedProduct.txt"
             );
 
-            if (!System.IO.File.Exists(filepath))
-            {
-                using (StreamWriter sw = System.IO.File.CreateText(filepath))
-                {
-                    sw.Write(fileContent);
-                }
-            }
+            System.IO.File.WriteAllText(filepath, fileContent);
 
             return View("Export");
         }
