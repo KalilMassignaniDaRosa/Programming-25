@@ -1,5 +1,39 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model PooModel.Customer;
+
 @{
+    ViewData["Title"] = "Delete Customer";
 }
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            Id:
+        </div>
+        <div class="row-6">
+            @Model.Id
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            Name:
+        </div>
+        <div class="row-6">
+            @Model.Name
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <form method="Post" asp-action="ConfirmDelete" asp-controller="Customer">
+                <input type="hidden" name="id" value="@Model.Id" />
+
+                <button class="btn btn-danger">
+                    Delete
+                </button>
+            </form>  
+            <a asp-action="Index" asp-controller="Customer" class="btn btn-primary">
+                Back
+            </a>     
+    </div>
+</div>

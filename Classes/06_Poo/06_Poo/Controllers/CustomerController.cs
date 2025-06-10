@@ -83,6 +83,31 @@ namespace _06_Poo.Controllers
             return View("Export");
         }
 
+        [HttpGet]
+        public IActionResult Delete(int? id)
+        {
+            // e possivel usar o is null
+            if( id is null || id.Value<=0)
+              return NotFound();
 
+            Customer customer = _customerRepository!.Retrieve(id.Value);
+
+            if(customer == null)
+                return NotFound();
+
+            return View(customer);
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmDelete(int? id)
+        {
+            if(id == null || id.Value<=0)
+                return NotFound();
+
+            if(!_customerRepository!.DeleteById(id.Value))
+                return NotFound();
+
+            return RedirectToAction("Index");
+        }
     }
 }
