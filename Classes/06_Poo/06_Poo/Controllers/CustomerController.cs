@@ -42,16 +42,19 @@ namespace _06_Poo.Controllers
 
         [HttpGet]
         // Por padrao ele pega a view com o mesmo nome do metodo
-        public IActionResult ExportDelimitatedCustumer()
+        public IActionResult ExportDelimitatedCustomer()
         {
             string fileContent = string.Empty;
+            string fileLocation = "Customer";
+            string fileName = "FixedCustomer";
+
             foreach (Customer c in CustomerData.Customers)
             {
                 if (c.AddressList != null && c.AddressList.Any())
                 {
                     foreach (Address address in c.AddressList)
                     {
-                        fileContent += $"{c.Id};{c.Name};{address.id};{address.City};" +
+                        fileContent += $"{c.Id};{c.Name};{address.Id};{address.City};" +
                                        $"{address.State};{address.Country};{address.StreetLine1};" +
                                        $"{address.StreetLine2};{address.PostalCode};" +
                                        $"{address.AddressType};\n";
@@ -64,22 +67,9 @@ namespace _06_Poo.Controllers
                 }
             }
 
-            var path = Path.Combine(
-                _environment.WebRootPath,
-                "TextFiles/Customer"
-            );
-
-            if(!System.IO.Directory.Exists( path ) )
-                System.IO.Directory.CreateDirectory( path );
-
-            var filepath = Path.Combine(
-                path,
-                "DelimitatedCustomer.txt"
-            );
-
-            System.IO.File.WriteAllText(filepath, fileContent);
-
-
+            SaveFile(fileContent, fileLocation, fileName);
+            ViewData["Location"] = fileLocation;
+            ViewData["Name"] = fileName + ".txt";
             return View("Export");
         }
 
@@ -108,6 +98,85 @@ namespace _06_Poo.Controllers
                 return NotFound();
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ExportFixedCustomer()
+        {
+            string fileContent = string.Empty;
+            string fileLocation = "Customer";
+            string fileName = "FixedCustomer";
+
+            foreach (Customer c in CustomerData.Customers)
+            {
+                if (c.AddressList != null && c.AddressList.Any())
+                {
+                    foreach (Address address in c.AddressList)
+                    {
+                        fileContent +=
+                            String.Format("{0:5}", c.Id)+
+                            String.Format("{0:64}", c.Name)+
+                            String.Format("{0:5}", address.Id)+
+                            String.Format("{0:32}", address.City)+
+                            String.Format("{0:2}", address.State)+
+                            String.Format("{0:32}", address.Country)+
+                            String.Format("{0:64}", address.StreetLine1)+
+                            String.Format("{0:64}", address.StreetLine2)+
+                            String.Format("{0:9}", address.PostalCode)+
+                            String.Format("{0:16}", address.AddressType)+
+                            "/n";    
+                    }
+                }
+                else
+                {
+                    //fileContent += String.Format("{0:5}{1:64}", c.Id, c.Name);
+                    // sem endereço: Id;Name + (9) “;” em branco + newline
+                    //fileContent += $"{c.Id};{c.Name};;;;;;;;;\n";
+                }
+            }
+
+            SaveFile(fileContent,fileLocation ,fileName );
+            ViewData["Location"] = fileLocation;
+            ViewData["Name"] = fileName + ".txt";
+            return View("Export");
+        }
+
+        private bool SaveFile(string content, string fileLocation, string fileName)
+        {
+            bool ret = true;
+            if(string.IsNullOrEmpty(content) || string.IsNullOrEmpty(fileName)
+                | string.IsNullOrEmpty(fileLocation))
+                return false;
+
+            var path = Path.Combine(
+                _environment.WebRootPath,
+                $"TextFiles/{fileLocation}"
+            );
+
+            try
+            {
+                if (!System.IO.Directory.Exists(path))
+                    System.IO.Directory.CreateDirectory(path);
+
+                var filepath = Path.Combine(
+                    path, $"{fileName}.txt"
+                );
+
+                System.IO.File.WriteAllText(filepath, content);
+            }
+            catch (IOException ioEx)
+            {
+                string msg = ioEx.Message;
+                //throw ioEx;
+                ret = false;
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                ret = false;
+            }
+
+            return ret;
         }
     }
 }

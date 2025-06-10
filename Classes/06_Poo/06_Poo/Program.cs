@@ -43,7 +43,7 @@ static void FillCustomerData()
             Name = $"Customer {i+1}",
             AddressList = new List<Address>{
                 new Address { 
-                    id = i,
+                    Id = i,
                     StreetLine1 = "My house street",
                     StreetLine2 = "Your house",
                     PostalCode = 89560000, 

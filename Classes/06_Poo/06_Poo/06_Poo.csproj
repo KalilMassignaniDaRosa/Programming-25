@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\TextFiles\" />
+    <Folder Include="wwwroot\TextFiles\Customer\" />
     <Folder Include="wwwroot\TextFiles\Product\" />
   </ItemGroup>
 
