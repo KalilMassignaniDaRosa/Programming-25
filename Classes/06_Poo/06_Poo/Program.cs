@@ -35,7 +35,8 @@ app.Run();
 
 static void FillCustomerData()
 {
-    for(int i= 0; i< 10; i++)
+    CustomerData.Customers.Clear();
+    for (int i= 0; i< 10; i++)
     {
         Customer customer = new()
         {
@@ -60,10 +61,11 @@ static void FillCustomerData()
 
 static void FillProductData()
 {
+    ProductData.Products.Clear();
+    Random rnd = new Random();
+
     for (int i = 0; i < 10; i++)
     {
-        Random rnd = new Random();
-
         Product product = new()
         {
             Id = i + 1,

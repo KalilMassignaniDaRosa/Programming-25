@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PooModel;
 using Repository;
+using StackExchange.Redis;
 
 namespace _06_Poo.Controllers
 {
@@ -46,7 +47,7 @@ namespace _06_Poo.Controllers
         {
             string fileContent = string.Empty;
             string fileLocation = "Customer";
-            string fileName = "FixedCustomer";
+            string fileName = "DelimitedCustomer";
 
             foreach (Customer c in CustomerData.Customers)
             {
@@ -68,36 +69,14 @@ namespace _06_Poo.Controllers
             }
 
             SaveFile(fileContent, fileLocation, fileName);
-            ViewData["Location"] = fileLocation;
-            ViewData["Name"] = fileName + ".txt";
+
+            ViewBag.File = new
+            {
+                Location = fileLocation,
+                Name = fileName + ".txt"
+            };
+
             return View("Export");
-        }
-
-        [HttpGet]
-        public IActionResult Delete(int? id)
-        {
-            // e possivel usar o is null
-            if( id is null || id.Value<=0)
-              return NotFound();
-
-            Customer customer = _customerRepository!.Retrieve(id.Value);
-
-            if(customer == null)
-                return NotFound();
-
-            return View(customer);
-        }
-
-        [HttpPost]
-        public IActionResult ConfirmDelete(int? id)
-        {
-            if(id == null || id.Value<=0)
-                return NotFound();
-
-            if(!_customerRepository!.DeleteById(id.Value))
-                return NotFound();
-
-            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -114,30 +93,45 @@ namespace _06_Poo.Controllers
                     foreach (Address address in c.AddressList)
                     {
                         fileContent +=
-                            String.Format("{0:5}", c.Id)+
-                            String.Format("{0:64}", c.Name)+
-                            String.Format("{0:5}", address.Id)+
-                            String.Format("{0:32}", address.City)+
-                            String.Format("{0:2}", address.State)+
-                            String.Format("{0:32}", address.Country)+
-                            String.Format("{0:64}", address.StreetLine1)+
-                            String.Format("{0:64}", address.StreetLine2)+
-                            String.Format("{0:9}", address.PostalCode)+
-                            String.Format("{0:16}", address.AddressType)+
-                            "/n";    
+                            String.Format("{0,-5}", c.Id) +
+                            String.Format("{0,-64}", c.Name) +
+                            String.Format("{0,-5}", address.Id) +
+                            String.Format("{0,-32}", address.City) +
+                            String.Format("{0,-2}", address.State) +
+                            String.Format("{0,-32}", address.Country) +
+                            String.Format("{0,-64}", address.StreetLine1) +
+                            String.Format("{0,-64}", address.StreetLine2) +
+                            String.Format("{0,-9}", address.PostalCode) +
+                            String.Format("{0,-16}", address.AddressType) +
+                            "\n";
                     }
                 }
                 else
                 {
-                    //fileContent += String.Format("{0:5}{1:64}", c.Id, c.Name);
-                    // sem endereço: Id;Name + (9) “;” em branco + newline
-                    //fileContent += $"{c.Id};{c.Name};;;;;;;;;\n";
+                    fileContent +=
+                        String.Format("{0,-5}", c.Id) +
+                        String.Format("{0,-64}", c.Name) +
+                        // Campos de endereço vazios
+                        String.Format("{0,-5}", "") +  // address.Id
+                        String.Format("{0,-32}", "") +  // address.City
+                        String.Format("{0,-2}", "") +  // address.State
+                        String.Format("{0,-32}", "") +  // address.Country
+                        String.Format("{0,-64}", "") +  // address.StreetLine1
+                        String.Format("{0,-64}", "") +  // address.StreetLine2
+                        String.Format("{0,-9}", "") +  // address.PostalCode
+                        String.Format("{0,-16}", "") +  // address.AddressType
+                        "\n";
                 }
             }
 
             SaveFile(fileContent,fileLocation ,fileName );
-            ViewData["Location"] = fileLocation;
-            ViewData["Name"] = fileName + ".txt";
+
+            ViewBag.File = new
+            {
+                Location = fileLocation,
+                Name = fileName + ".txt"
+            };
+
             return View("Export");
         }
 
@@ -177,6 +171,33 @@ namespace _06_Poo.Controllers
             }
 
             return ret;
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int? id)
+        {
+            // e possivel usar o is null
+            if (id is null || id.Value <= 0)
+                return NotFound();
+
+            Customer customer = _customerRepository!.Retrieve(id.Value);
+
+            if (customer == null)
+                return NotFound();
+
+            return View(customer);
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmDelete(int? id)
+        {
+            if (id == null || id.Value <= 0)
+                return NotFound();
+
+            if (!_customerRepository!.DeleteById(id.Value))
+                return NotFound();
+
+            return RedirectToAction("Index");
         }
     }
 }

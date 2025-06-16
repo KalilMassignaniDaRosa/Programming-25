@@ -2,17 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="hero d-flex flex-column justify-content-center text-center">
-    <h1 class="display-4 mb-3">Welcome again</h1>
-    <p class="lead mb-4">
-        Manage your products and customers!
+<div class="hero d-flex flex-column justify-content-center text-center py-5">
+    <h1 class="display-3 mb-4 text-primary">
+        <i class="fa-solid fa-store me-2"></i> Welcome back!
+    </h1>
+
+    <p class="lead mb-5 text-muted">
+        Manage your <strong>Customers</strong> and <strong>Products</strong> with ease
     </p>
-    <div>
-        <a asp-controller="Product" asp-action="Index" class="btn btn-primary btn-lg me-3">
-            View Products
+
+    <div class="d-flex justify-content-center gap-3">
+        <a asp-controller="Customer" asp-action="Index" class="btn btn-primary btn-lg px-5 shadow">
+            <i class="fa-solid fa-users me-2"></i> View Customers
         </a>
-        <a asp-controller="Customer" asp-action="Index" class="btn btn-outline-secondary btn-lg">
-            View Customers
+
+        <a asp-controller="Product" asp-action="Index" class="btn btn-dark btn-lg px-5 shadow">
+            <i class="fa-solid fa-boxes-stacked me-2"></i> View Products
         </a>
     </div>
 </div>

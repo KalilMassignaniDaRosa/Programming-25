@@ -1,0 +1,7 @@
+3    Product 2                     Product 2 description                                  82,00
+4    Product 3                     Product 3 description                                   9,00
+5    Product 4                     Product 4 description                                  25,00
+6    Product 5                     Product 5 description                                  13,00
+7    Product 6                     Product 6 description                                  26,00
+8    Product 7                     Product 7 description                                  34,00
+9    3                             33                                                      3,00

@@ -1,16 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Export Completed";
+    var file = ViewBag.File;
 }
 
 <div class="text-center mt-5">
-    <h2 class="display-6 text-success">Export completed successfully!</h2>
+    <h2 class="display-6 text-success">
+        <i class="fa-solid fa-circle-check me-2"></i> Export completed successfully!
+    </h2>
 
     <div class="mt-4">
-        <a asp-action="Index" asp-controller="Customer" class="btn btn-primary">
-            Back to customer list
+        <a asp-action="Index" asp-controller="Customer" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-arrow-left me-1"></i> Back to customer list
         </a>
-        <a href="~/TextFiles/@ViewData["Location"]/@ViewData["Name"]" download class="btn btn-outline-secondary">
-            Download file
+    </div>
+
+    <hr />
+
+    <div class="mt-3">
+        <h5><i class="fa-solid fa-download me-1"></i> Download your file:</h5>
+        <a href="~/TextFiles/@file.Location/@file.Name"
+           download
+           class="btn btn-primary">
+            <i class="fa-solid fa-file-arrow-down me-1"></i> @file.Name
         </a>
     </div>
 </div>
