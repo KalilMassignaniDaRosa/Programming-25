@@ -1,0 +1,76 @@
+﻿@model List<PooModel.Order>
+
+@{
+    ViewData["Title"] = "Order List";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-5">
+        <i class="fa-solid fa-clipboard me-2 text-primary"></i> Order List
+    </h1>
+</div>
+<hr>
+<div class="mb-3">
+    <a asp-action="Create" asp-controller="Order" class="btn btn-success">
+        <i class="fa-solid fa-clipboard me-1"></i> New Order
+    </a>
+</div>
+
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-bordered table-hover align-middle text-center">
+            <thead class="table-primary">
+                <tr>
+                    <th style="width: 5%;"><i class="fa-solid fa-cart-plus"></i></th>
+                    <th style="width: 10%;">Item</th>
+                    <th class="text-start">Amount</th>
+                    <th style="width: 10%;">Price</th>
+                    <th style="width: 10%;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="@order.Id" id="@order.Id">
+                            </div>
+                        </td>
+                        <td>@order.Id</td>
+                        <td class="text-start">@order.</td>
+                        <td class="text-start">@order.OrderDate</td>
+                        
+                        <td class="text-center">
+                            <a asp-action="Delete" asp-controller="Order"
+                               asp-route-id="@order.Id"
+                               title="Delete Order @order.Id"
+                               class="btn btn-sm btn-outline-danger p-2">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        There are no order records.
+    </div>
+}
+
+
+
+<div class="mb-4 mt-3">
+    <a asp-action="ExportDelimitatedOrder" asp-controller="Order" class="btn btn-primary me-2">
+        <i class="fa-solid fa-file-export me-1"></i> Export Delimitated
+    </a>
+    <a asp-action="ExportFixedOrder" asp-controller="Order" class="btn btn-primary">
+        <i class="fa-solid fa-file-export me-1"></i> Export Fixed
+    </a>
+</div>

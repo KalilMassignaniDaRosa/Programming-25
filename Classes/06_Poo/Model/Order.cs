@@ -4,7 +4,7 @@
     {
         #region Atributes
         public int Id { get; set; }
-        public Customer? Costumer { get; set; }
+        public Customer? Customer { get; set; }
         public DateTime OrderDate { get; set; }
         public Address ShippingAddress { get; set; }
         public List<OrderItem>? OrderItems { get; set; }
@@ -27,7 +27,7 @@
             bool isValid = true;
 
             isValid = (ShippingAddress != null)&&
-                (this.Id > 0) && (this.OrderItems!.Count > 0) && (Costumer != null);
+                (this.Id > 0) && (this.OrderItems!.Count > 0) && (Customer != null);
 
             return isValid;
         }

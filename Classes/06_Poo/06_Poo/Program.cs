@@ -76,3 +76,21 @@ static void FillProductData()
         ProductData.Products.Add(product);
     }
 }
+
+static void FillOrderData()
+{
+    CustomerData.Orders.Clear();
+
+    for (int i = 0; i < 10; i++)
+    {
+        Order order = new()
+        {
+            Id = i + 1,
+            Customer = ,
+
+        }
+        
+
+        CustomerData.Orders.Add(order);
+    }
+}

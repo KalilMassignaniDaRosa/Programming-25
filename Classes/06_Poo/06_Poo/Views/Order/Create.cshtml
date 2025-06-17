@@ -1,0 +1,48 @@
+﻿@model _06_Poo.ViewModels.OrderViewModel
+
+@{
+    ViewData["Title"] = "Create Order";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fa-solid fa-clipboard me-2"></i> Create Order
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" asp-controller="Order" method="post" id="formOrder" novalidate>
+                        <div class="mb-3">
+                            <label asp-for="@Model.CustomerId" class="form-label fw-semibold">Customer</label>
+                            <select asp-for="@Model.CustomerId" class="form-select">
+                                <option selected>Select Customer</option>
+                                @foreach(var c in Model.Customers)
+                                {
+                                    <option value="@c.Id" class="form-control">@c.Name</option>
+                                }
+                            </select>   
+                        </div>
+
+                        <div class="row">
+
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" asp-controller="Order" class="btn btn-outline-danger me-2">
+                                <i class="fa-solid fa-arrow-left me-1"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa-solid fa-check me-1"></i> Register
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
