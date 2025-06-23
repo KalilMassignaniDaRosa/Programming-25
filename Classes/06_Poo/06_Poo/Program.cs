@@ -30,6 +30,7 @@ app.MapControllerRoute(
 
 FillCustomerData();
 FillProductData();
+FillOrderData();
 
 app.Run();
 
@@ -80,16 +81,32 @@ static void FillProductData()
 static void FillOrderData()
 {
     CustomerData.Orders.Clear();
+    var rnd = new Random();
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 5; i++)
     {
-        Order order = new()
+        var customer = CustomerData.Customers[rnd.Next(CustomerData.Customers.Count)];
+        var shippingAddress = customer.AddressList!.First();
+
+        var order = new Order
         {
             Id = i + 1,
-            Customer = ,
+            Customer = customer,
+            ShippingAddress = shippingAddress
+        };
 
+        int itemCount = rnd.Next(1, 4);
+        for (int j = 0; j < itemCount; j++)
+        {
+            var product = ProductData.Products[rnd.Next(ProductData.Products.Count)];
+
+            order.OrderItems.Add(new OrderItem
+            {
+                Product = product,
+                Quantity = rnd.Next(1, 5),
+                PurchasePrice = product.CurrentPrice
+            });
         }
-        
 
         CustomerData.Orders.Add(order);
     }

@@ -34,6 +34,14 @@ namespace Repository
             return ret;
         }
 
+        public Order? RetrieveLastByCustomer(int customerId)
+        {
+            return CustomerData.Orders
+                .Where(o => o.Customer is not null && o.Customer.Id == customerId)
+                .OrderByDescending(o => o.OrderDate)
+                .FirstOrDefault();
+        }
+
         public List<Order> RetriveAll()
         {
             return CustomerData.Orders;

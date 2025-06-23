@@ -1,7 +1,10 @@
-3;Product 2;Product 2 description;82;
-4;Product 3;Product 3 description;9;
-5;Product 4;Product 4 description;25;
-6;Product 5;Product 5 description;13;
-7;Product 6;Product 6 description;26;
-8;Product 7;Product 7 description;34;
-9;3;33;3;
+1;Product 0;Product 0 description;92;
+2;Product 1;Product 1 description;93;
+3;Product 2;Product 2 description;75;
+4;Product 3;Product 3 description;97;
+5;Product 4;Product 4 description;37;
+6;Product 5;Product 5 description;12;
+7;Product 6;Product 6 description;19;
+8;Product 7;Product 7 description;70;
+9;Product 8;Product 8 description;66;
+10;Product 9;Product 9 description;82;

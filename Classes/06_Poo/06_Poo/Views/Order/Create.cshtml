@@ -6,43 +6,96 @@
 
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
+        <div class="col-md-8">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header bg-primary text-white rounded-top-4">
                     <h5 class="mb-0">
                         <i class="fa-solid fa-clipboard me-2"></i> Create Order
                     </h5>
                 </div>
-                <div class="card-body">
-                    <form asp-action="Create" asp-controller="Order" method="post" id="formOrder" novalidate>
-                        <div class="mb-3">
-                            <label asp-for="@Model.CustomerId" class="form-label fw-semibold">Customer</label>
-                            <select asp-for="@Model.CustomerId" class="form-select">
-                                <option selected>Select Customer</option>
-                                @foreach(var c in Model.Customers)
-                                {
-                                    <option value="@c.Id" class="form-control">@c.Name</option>
-                                }
-                            </select>   
-                        </div>
+                <div class="card-body p-4">
 
-                        <div class="row">
+                    <form asp-action="LoadProducts" method="post" id="formCustomer" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                        </div>
-                        
-                        <div class="d-flex justify-content-between">
-                            <a asp-action="Index" asp-controller="Order" class="btn btn-outline-danger me-2">
-                                <i class="fa-solid fa-arrow-left me-1"></i> Cancel
-                            </a>
-                            <button type="submit" class="btn btn-success">
-                                <i class="fa-solid fa-check me-1"></i> Register
-                            </button>
+                        <div class="mb-4">
+                            <label asp-for="CustomerId" class="form-label fw-semibold">Customer</label>
+                            <select asp-for="CustomerId"
+                                    class="form-select"
+                                    asp-items="@(new SelectList(Model.Customers, "Id", "Name", Model.CustomerId))"
+                                    required
+                                    onchange="this.form.submit()">
+                                <option value="">Select Customer</option>
+                            </select>
+                            <span asp-validation-for="CustomerId" class="text-danger small"></span>
                         </div>
                     </form>
+
+                    @if (Model.CustomerId.HasValue)
+                    {
+                        <form asp-action="CreateOrder" method="post" id="formOrder" novalidate>
+                            <input type="hidden" asp-for="CustomerId" />
+
+                            <div class="mb-4">
+                                <h5 class="mb-3">Select Products</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover shadow-sm">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width:5%;">Select</th>
+                                                <th>Product</th>
+                                                <th>Description</th>
+                                                <th style="width:15%;">Price</th>
+                                                <th style="width:15%;">Quantity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.SelectedItems!.Count; i++)
+                                            {
+                                                <tr>
+                                                    <td class="text-center align-middle">
+                                                        <div class="form-check">
+                                                            <input asp-for="SelectedItems[i].IsSelected"
+                                                                   class="form-check-input" />
+                                                            <input type="hidden"
+                                                                   asp-for="SelectedItems[i].OrderItem.Product.Id" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        @Model.SelectedItems[i].OrderItem.Product!.Name
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        @Model.SelectedItems[i].OrderItem.Product!.Description
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        @Model.SelectedItems[i].OrderItem.Product!.CurrentPrice.ToString("C")
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        <input asp-for="SelectedItems[i].OrderItem.Quantity"
+                                                               type="number"
+                                                               class="form-control"
+                                                               min="0.01"
+                                                               step="0.01" />
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between mt-4">
+                                <a asp-action="Index" class="btn btn-outline-danger px-4 py-2 rounded-3">
+                                    <i class="fa-solid fa-arrow-left me-1"></i> Cancel
+                                </a>
+                                <button type="submit" class="btn btn-success px-4 py-2 rounded-3">
+                                    <i class="fa-solid fa-check me-1"></i> Register Order
+                                </button>
+                            </div>
+                        </form>
+                    }
                 </div>
             </div>
-
         </div>
     </div>
 </div>

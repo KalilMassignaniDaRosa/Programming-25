@@ -7,7 +7,7 @@ namespace _06_Poo.ViewModels
     {
         public List<Customer> Customers { get; set; } = [];
         public int? CustomerId { get; set; }
-        public List<SelectedItem>? SelectedItems { get; set; }
+        public List<SelectedItem>? SelectedItems { get; set; } = new();
     }
 
     public class SelectedItem
