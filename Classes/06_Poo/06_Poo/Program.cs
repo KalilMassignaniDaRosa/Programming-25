@@ -62,7 +62,7 @@ static void FillCustomerData()
 
 static void FillProductData()
 {
-    ProductData.Products.Clear();
+    CustomerData.Products.Clear();
     Random rnd = new Random();
 
     for (int i = 0; i < 10; i++)
@@ -70,11 +70,11 @@ static void FillProductData()
         Product product = new()
         {
             Id = i + 1,
-            Name = $"Product {i}",
-            Description = $"Product {i} description",
+            Name = $"Product {i+1}",
+            Description = $"Product {i+1} description",
             CurrentPrice = rnd.Next(1, 100)
         };
-        ProductData.Products.Add(product);
+        CustomerData.Products.Add(product);
     }
 }
 
@@ -98,7 +98,7 @@ static void FillOrderData()
         int itemCount = rnd.Next(1, 4);
         for (int j = 0; j < itemCount; j++)
         {
-            var product = ProductData.Products[rnd.Next(ProductData.Products.Count)];
+            var product = CustomerData.Products[rnd.Next(CustomerData.Products.Count)];
 
             order.OrderItems.Add(new OrderItem
             {

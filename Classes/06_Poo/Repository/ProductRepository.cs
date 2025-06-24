@@ -35,13 +35,13 @@ namespace Repository
 
         public List<Product> RetriveAll()
         {
-            return ProductData.Products;
+            return CustomerData.Products;
         }
 
         public void Save(Product Product)
         {
             Product.Id = GetCount() + 1;
-            ProductData.Products.Add(Product);
+            CustomerData.Products.Add(Product);
         }
 
         public void Update(Product newProduct)
@@ -55,7 +55,7 @@ namespace Repository
 
         public bool Delete(Product Product)
         {
-            return ProductData.Products.Remove(Product);
+            return CustomerData.Products.Remove(Product);
         }
 
         public bool DeleteById(int id)
@@ -65,7 +65,7 @@ namespace Repository
 
         public int GetCount()
         {
-            return ProductData.Products.Count;
+            return CustomerData.Products.Count;
         }
     }
 }

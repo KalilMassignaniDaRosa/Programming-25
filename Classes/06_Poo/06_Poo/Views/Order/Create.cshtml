@@ -33,7 +33,7 @@
 
                     @if (Model.CustomerId.HasValue)
                     {
-                        <form asp-action="CreateOrder" method="post" id="formOrder" novalidate>
+                        <form asp-action="Create" method="post" id="formOrder" novalidate>
                             <input type="hidden" asp-for="CustomerId" />
 
                             <div class="mb-4">
@@ -44,8 +44,8 @@
                                             <tr>
                                                 <th style="width:5%;">Select</th>
                                                 <th>Product</th>
-                                                <th>Description</th>
                                                 <th style="width:15%;">Price</th>
+                                                <th style="width:20%;">Purchase Price</th>
                                                 <th style="width:15%;">Quantity</th>
                                             </tr>
                                         </thead>
@@ -54,9 +54,9 @@
                                             {
                                                 <tr>
                                                     <td class="text-center align-middle">
-                                                        <div class="form-check">
+                                                        <div class="form-check align-content-center">
                                                             <input asp-for="SelectedItems[i].IsSelected"
-                                                                   class="form-check-input" />
+                                                                   class="form-check-input text-center" />
                                                             <input type="hidden"
                                                                    asp-for="SelectedItems[i].OrderItem.Product.Id" />
                                                         </div>
@@ -65,17 +65,21 @@
                                                         @Model.SelectedItems[i].OrderItem.Product!.Name
                                                     </td>
                                                     <td class="align-middle">
-                                                        @Model.SelectedItems[i].OrderItem.Product!.Description
+                                                        @Model.SelectedItems[i].OrderItem.Product!.CurrentPrice.ToString("C")
                                                     </td>
                                                     <td class="align-middle">
-                                                        @Model.SelectedItems[i].OrderItem.Product!.CurrentPrice.ToString("C")
+                                                        <input asp-for="SelectedItems[i].OrderItem.PurchasePrice"
+                                                               type="number"
+                                                               class="form-control"
+                                                               min="0.01"
+                                                               step="0.01" />
                                                     </td>
                                                     <td class="align-middle">
                                                         <input asp-for="SelectedItems[i].OrderItem.Quantity"
                                                                type="number"
                                                                class="form-control"
-                                                               min="0.01"
-                                                               step="0.01" />
+                                                               min="1.0"
+                                                               step="1.00" />
                                                     </td>
                                                 </tr>
                                             }

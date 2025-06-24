@@ -12,6 +12,7 @@ namespace _06_Poo.Controllers
         private readonly IWebHostEnvironment _environment;
         private ProductRepository? _productRepository;
 
+
         public ProductController(IWebHostEnvironment environment)
         {
             _productRepository = new ProductRepository();
@@ -21,9 +22,8 @@ namespace _06_Poo.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            List<Product> Products = _productRepository!.RetriveAll();
-
-            return View(Products);
+            var products = _productRepository!.RetriveAll();
+            return View(products);
         }
 
         [HttpGet]

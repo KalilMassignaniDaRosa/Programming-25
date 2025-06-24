@@ -9,6 +9,8 @@ namespace Repository
 {
     public class OrderRepository
     {
+        private readonly List<Order> _orders = new();
+
 
         public Order Retrieve(int id)
         {
@@ -44,7 +46,15 @@ namespace Repository
 
         public List<Order> RetriveAll()
         {
-            return CustomerData.Orders;
+            var productRepo = new ProductRepository();
+            foreach (var order in _orders)
+            {
+                foreach (var item in order.OrderItems)
+                {
+                    item.Product = productRepo.Retrieve(item.Product!.Id);
+                }
+            }
+            return _orders;
         }
 
         public void Save(Order order)

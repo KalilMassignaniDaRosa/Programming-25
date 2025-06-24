@@ -26,8 +26,25 @@ namespace _06_Poo.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var orders = _orderRepository.RetriveAll();
-            return View(orders);
+            var allOrders = CustomerData.Orders
+                               .Concat(_orderRepository.RetriveAll())
+                               .ToList();
+
+            foreach (var order in allOrders)
+            {
+                foreach (var item in order.OrderItems)
+                {
+                    var prodId = item.Product?.Id;
+                    if (!prodId.HasValue)
+                        continue;
+
+                    item.Product =
+                        _productRepository.Retrieve(prodId.Value)
+                        ?? CustomerData.Products.First(p => p.Id == prodId.Value);
+                }
+            }
+
+            return View(allOrders);
         }
 
         [HttpGet]
@@ -60,82 +77,58 @@ namespace _06_Poo.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateOrder(OrderViewModel viewModel)
+        public IActionResult Create(OrderViewModel model)
         {
-            viewModel.Customers = _customerRepository.RetriveAll();
-
-            if (viewModel.CustomerId == null)
+            if (!ModelState.IsValid)
             {
-                viewModel.SelectedItems = LoadSelectedItems(0);
-                return View("Create", viewModel);
+                model.Customers = _customerRepository.RetriveAll();
+                if (model.CustomerId.HasValue)
+                    model.SelectedItems = LoadSelectedItems(model.CustomerId.Value);
+                else
+                    model.SelectedItems = new List<SelectedItem>();
+
+                return View(model);
             }
 
-            if (ModelState.IsValid)
+            var order = new Order
             {
-                var customer = _customerRepository.Retrieve(viewModel.CustomerId.Value);
+                Customer = _customerRepository.Retrieve(model.CustomerId!.Value),
+                OrderDate = DateTime.Now
+            };
 
-                var order = new Order
+            int count = 1;
+            foreach (var item in model.SelectedItems!)
+            {
+                if (item.IsSelected)
                 {
-                    Customer = customer,
-                    ShippingAddress = customer?.AddressList?.FirstOrDefault()!, 
-                    OrderItems = new List<OrderItem>()
-                };
-
-                foreach (var item in viewModel.SelectedItems!)
-                {
-                    if (item.IsSelected && item.OrderItem.Quantity > 0)
+                    order.OrderItems.Add(new OrderItem
                     {
-                        var product = _productRepository.Retrieve(item.OrderItem.Product!.Id);
-                        if (product != null)
-                        {
-                            order.OrderItems.Add(new OrderItem
-                            {
-                                Product = product,
-                                Quantity = item.OrderItem.Quantity,
-                                PurchasePrice = product.CurrentPrice
-                            });
-                        }
-                    }
+                        Id = count++,
+                        Product = item.OrderItem.Product!,
+                        Quantity = item.OrderItem.Quantity,
+                        PurchasePrice = item.OrderItem.PurchasePrice
+                    });
                 }
-
-                if (!order.OrderItems.Any())
-                {
-                    viewModel.SelectedItems = LoadSelectedItems(viewModel.CustomerId.Value);
-                    return View("Create", viewModel);
-                }
-
-                _orderRepository.Save(order);
-                return RedirectToAction(nameof(Index));
             }
 
-            viewModel.SelectedItems = LoadSelectedItems(viewModel.CustomerId.Value);
-            return View("Create", viewModel);
-        }
+            _orderRepository.Save(order);
 
+            return RedirectToAction(nameof(Index));
+        }
 
         private List<SelectedItem> LoadSelectedItems(int customerId)
         {
-            var products = _productRepository.RetriveAll();
-            var selectedItems = new List<SelectedItem>();
-
-            var existingOrder = CustomerData.Orders.FirstOrDefault(o => o.Customer!.Id == customerId);
-
-            foreach (var product in products)
+            var allProducts = _productRepository.RetriveAll();
+            return allProducts.Select(p => new SelectedItem
             {
-                var existingItem = existingOrder?.OrderItems.FirstOrDefault(i => i.Product!.Id == product.Id);
-
-                selectedItems.Add(new SelectedItem
+                IsSelected = false,
+                OrderItem = new OrderItem
                 {
-                    OrderItem = new OrderItem
-                    {
-                        Product = product,
-                        Quantity = existingItem?.Quantity ?? 1
-                    },
-                    IsSelected = existingItem != null
-                });
-            }
-
-            return selectedItems;
+                    Product = p,
+                    Quantity = 1,
+                    PurchasePrice = p.CurrentPrice
+                }
+            }).ToList();
         }
 
         [HttpGet]
